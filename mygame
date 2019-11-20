@@ -1,4 +1,2 @@
 import turtle
-forward(30)
-left(30)
-right(30)
+
