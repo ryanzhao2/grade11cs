@@ -1,0 +1,20 @@
+import turtle
+
+t = turtle.Turtle()
+for i in range(5):
+    t.forward(100)
+    t.right(72)
+t.penup()
+t.setposition(10, -10)
+t.pendown()
+t.forward(80)
+t.right(72)
+t.forward(80)
+t.right(72)
+t.forward(80)
+t.right(72)
+t.forward(80)
+t.right(72)
+t.forward(80)
+t.right(72)
+turtle.mainloop()
