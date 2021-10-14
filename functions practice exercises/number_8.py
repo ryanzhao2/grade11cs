@@ -7,7 +7,7 @@ def is_leap_year(some_year):
 user_year = int(input("Enter a number: "))
 print(is_leap_year(user_year))
 
-"""
+
 def my_leap_year (year):
     if(year % 100 == 0 and year %400 != 0):
         return False
@@ -16,4 +16,3 @@ def my_leap_year (year):
     return False
 
 print(my_leap_year(user_year))
-"""
