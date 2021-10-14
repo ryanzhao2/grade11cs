@@ -34,16 +34,19 @@ import random
 
 def draw_triangle(a_turtle, x, y, side_a, side_b):
     side_c = math.sqrt(side_a ** 2 + side_b ** 2)
-    sin_c = sin(side_c)
-    sin_a = sin(side_a)
-    degrees = math.degrees(sin_c)
-    math.sin(x)
+    angle_c = math.asin(side_b / side_c)
+    c_deg = math.degrees(angle_c)
+    other_ang = 180 - 90 - c_deg
     a_turtle.up()
     a_turtle.goto(x, y)
     a_turtle.down()
     a_turtle.setheading(90)
     a_turtle.forward(side_a)
-    a_turtle.right(45)
+    a_turtle.right(90)
+    a_turtle.forward(side_b)
+    a_turtle.right(180 - other_ang)
+    a_turtle.forward(side_c)
+
 
 
 def main():
@@ -61,8 +64,10 @@ def main():
 
     tula.color(random.choice(all_colours))
     draw_triangle(tula, 100, 100, 200, 80)
-    main()
-    turtle.done()
+
+
+main()
+turtle.done()
 """
 def draw_snowman(a_turtle, x, y):
     pass
