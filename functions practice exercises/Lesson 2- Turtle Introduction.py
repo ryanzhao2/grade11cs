@@ -1,0 +1,335 @@
+#RYAN ZHAO
+#OCTOBER 15, 2021
+#LESSON #2
+
+#QUESTION #1
+"""
+import turtle
+world = turtle.Screen()
+world.setup(width=400, height=400)
+world.setworldcoordinates(0, 0, 400, 400)
+world.bgcolor('white')
+
+tula = turtle.Turtle()
+tula.color('black')
+tula.begin_fill()
+tula.setheading(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(100)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(200)
+tula.end_fill()
+
+tula.penup()
+tula.goto(100, 200)
+tula.setheading(90)
+tula.pendown()
+
+tula.begin_fill()
+tula.forward(200)
+tula.right(90)
+tula.forward(300)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(300)
+tula.end_fill()
+
+tula.penup()
+tula.goto(200, 0)
+tula.setheading(90)
+tula.pendown()
+
+tula.begin_fill()
+tula.forward(100)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(100)
+tula.right(90)
+tula.forward(200)
+tula.end_fill()
+turtle.done()
+"""
+
+#QUESTION #2
+"""
+import turtle
+world = turtle.Screen()
+world.setup(width=400, height=400)
+world.setworldcoordinates(0, 0, 400, 400)
+world.bgcolor('white')
+
+tula = turtle.Turtle()
+
+tula.penup()
+tula.goto(50, 80)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('black')
+tula.begin_fill()
+tula.forward(200)
+tula.right(90)
+tula.forward(30)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(30)
+tula.end_fill()
+
+tula.penup()
+tula.goto(50, 300)
+tula.setheading(90)
+tula.pendown()
+
+tula.begin_fill()
+tula.forward(30)
+tula.right(90)
+tula.forward(30)
+tula.right(90)
+tula.forward(30)
+tula.right(90)
+tula.forward(30)
+tula.end_fill()
+
+tula.penup()
+tula.goto(100, 300)
+tula.setheading(90)
+tula.pendown()
+
+tula.begin_fill()
+tula.forward(30)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(30)
+tula.right(90)
+tula.forward(200)
+tula.end_fill()
+
+tula.penup()
+tula.goto(110, 210)
+tula.setheading(90)
+tula.pendown()
+
+tula.begin_fill()
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.end_fill()
+
+tula.penup()
+tula.goto(170, 150)
+tula.setheading(90)
+tula.pendown()
+
+tula.begin_fill()
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.end_fill()
+
+tula.penup()
+tula.goto(230, 90)
+tula.setheading(90)
+tula.pendown()
+
+tula.begin_fill()
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.right(90)
+tula.forward(60)
+tula.end_fill()
+
+
+turtle.done()
+"""
+
+#QUESTION #3
+"""
+import turtle
+world = turtle.Screen()
+world.setup(width=400, height=400)
+world.setworldcoordinates(0, 0, 400, 400)
+world.bgcolor('white')
+
+tula = turtle.Turtle()
+
+tula.penup()
+tula.goto(40, 100)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('green')
+tula.begin_fill()
+tula.forward(200)
+tula.right(90)
+tula.forward(100)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(100)
+tula.end_fill()
+
+tula.penup()
+tula.goto(140, 100)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('yellow')
+tula.begin_fill()
+tula.forward(200)
+tula.right(90)
+tula.forward(100)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(100)
+tula.end_fill()
+
+tula.penup()
+tula.goto(240, 100)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('red')
+tula.begin_fill()
+tula.forward(200)
+tula.right(90)
+tula.forward(100)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(100)
+tula.end_fill()
+
+tula.penup()
+tula.goto(40, 100)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('black')
+tula.width(5)
+tula.forward(200)
+tula.right(90)
+tula.forward(300)
+tula.right(90)
+tula.forward(200)
+tula.right(90)
+tula.forward(300)
+
+
+turtle.done()
+"""
+
+#QUESTION #4
+"""
+import turtle
+world = turtle.Screen()
+world.setup(width=400, height=400)
+world.setworldcoordinates(0, 0, 400, 400)
+world.bgcolor("#03fcfc")
+
+tula = turtle.Turtle()
+
+tula.penup()
+tula.goto(130, 90)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('white')
+tula.begin_fill()
+tula.forward(220)
+tula.right(90)
+tula.forward(133)
+tula.right(90)
+tula.forward(220)
+tula.right(90)
+tula.forward(133)
+tula.end_fill()
+
+tula.penup()
+tula.goto(140, 100)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('#cfb648')
+tula.begin_fill()
+tula.forward(155)
+tula.right(90)
+tula.forward(113)
+tula.right(90)
+tula.forward(155)
+tula.right(90)
+tula.forward(113)
+tula.end_fill()
+
+tula.penup()
+tula.goto(145, 210)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('white')
+tula.begin_fill()
+tula.forward(35)
+tula.right(90)
+tula.forward(35)
+tula.right(90)
+tula.forward(35)
+tula.right(90)
+tula.forward(35)
+tula.end_fill()
+
+tula.penup()
+tula.goto(170, 175)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('white')
+tula.begin_fill()
+tula.forward(20)
+tula.right(90)
+tula.forward(20)
+tula.right(90)
+tula.forward(20)
+tula.right(90)
+tula.forward(20)
+tula.end_fill()
+
+tula.penup()
+tula.goto(220, 115)
+tula.setheading(90)
+tula.pendown()
+
+tula.color('red')
+tula.begin_fill()
+tula.forward(230)
+tula.right(90)
+tula.forward(40)
+tula.right(90)
+tula.forward(10)
+tula.right(90)
+tula.forward(30)
+tula.left(90)
+tula.forward(220)
+tula.right(90)
+tula.forward(10)
+tula.end_fill()
+
+turtle.done()
+"""
