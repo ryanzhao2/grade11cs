@@ -1,4 +1,4 @@
-
+#QUESTION #1
 """
 import turtle
 import random
@@ -11,7 +11,7 @@ def draw_circle(a_turtle, x, y, radius):
 
     a_turtle.circle(radius)
 
-def draw_filled_circle(a_turtle, x, y, radius):
+def draw_filled_circle_with_color(a_turtle, x, y, radius):
     a_turtle.color('blue')
     a_turtle.begin_fill()
     a_turtle.circle(radius)
@@ -21,13 +21,15 @@ def main( ):
     tula = turtle.Turtle()
     ryan = turtle.Turtle()
     draw_circle(tula, 100, 100, 50)
-    draw_filled_circle(ryan, 200, 200, 50)
+    draw_filled_circle_with_color(ryan, 200, 200, 50)
 
 
 main()
 turtle.done()
 """
 
+#QUESTION #2
+"""
 import math
 import turtle
 import random
@@ -69,7 +71,54 @@ def main():
 main()
 turtle.done()
 """
-def draw_snowman(a_turtle, x, y):
-    pass
+#QUESTION #3
 """
+import turtle
+import random
 
+def motion(event):
+    x, y = event.x, event.y
+    print(f'{x}, {600-y}')
+canvas = turtle.getcanvas()
+canvas.bind('<Motion>', motion)
+
+def world_setup():
+    world = turtle.Screen()
+    world.setup(width=600, height=600)
+    world.setworldcoordinates(0, 0, 600, 600)
+    world.colormode(255)
+    c = (223,149,149)
+    world.bgcolor(c)
+    return world
+
+
+def draw_filled_circle_with_color(a_turtle, x, y, radius, mycolor):
+    a_turtle.up()
+    a_turtle.goto(x, y)
+    a_turtle.down()
+    a_turtle.color(mycolor)
+    a_turtle.begin_fill()
+    a_turtle.circle(radius)
+    a_turtle.end_fill()
+
+
+def main( ):
+    world = world_setup()
+    ryan = turtle.Turtle()
+    draw_filled_circle_with_color(ryan, 300, 200, 50, 'white')
+    draw_filled_circle_with_color(ryan, 300, 290, 35, 'white')
+    draw_filled_circle_with_color(ryan, 300, 355, 25, 'white')
+    draw_filled_circle_with_color(ryan, 300, 305, 5, 'black')
+    draw_filled_circle_with_color(ryan, 300, 320, 5, 'black')
+    draw_filled_circle_with_color(ryan, 300, 335, 5, 'black')
+    draw_filled_circle_with_color(ryan, 290, 376, 7, 'black')
+    draw_filled_circle_with_color(ryan, 310, 376, 7, 'black')
+
+
+
+
+
+main()
+turtle.done()
+
+"""
