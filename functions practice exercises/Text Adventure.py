@@ -46,9 +46,9 @@ def casino():
     print('Invalid Answer')
 
 def train_station():
-    print("You arrive at the train station and someone offers you to play a game to win some money,\n
-          and eventually you make some money from the game He then passes a card to you with a number \n
-          on it and tells you to call it to make a lot more money.")
+    print("You arrive at the train station and someone offers you to play a game to \nwin some money, \
+and eventually you make some money from the game. He then passes a card to \nyou with a number \
+on it and tells you to call it to make a lot more money.")
     print("1 - Call the number and accept the offer.")
     print("2 - Ignore the card, and buy lunch with the money. ")
     option = input("Enter your choice: ")
