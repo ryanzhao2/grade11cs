@@ -156,10 +156,10 @@ def second_game():
     text_second_game = bold + "\nThe hosts have now brought everyone to play a new game in an indoor playground.\
 In front of you, there are four shapes to choose from."
     print(textwrap.fill(text=text_second_game, width=80, replace_whitespace=False))
-    print("1 - f'\u25B3'")
-    print("2 - f'\u2602'")
-    print("3 - f'\u2299'")
-    print("4 - f'\u2605'")
+    print("1 - \u25B3")
+    print("2 - \u2602")
+    print("3 - \u2299")
+    print("4 - \u2605")
     option = input("Choose a shape: ")
 
 def third_game():
