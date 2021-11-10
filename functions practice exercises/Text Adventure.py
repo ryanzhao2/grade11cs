@@ -1,4 +1,6 @@
 import textwrap
+import os
+
 
 bold = "\033[1m"
 reset_bold = "\033[0m"
@@ -9,9 +11,11 @@ good_shape = True
 def start():
     print(bold + "Welcome to Squid Game" + reset_bold)
     input("Press Enter to Continue: ")
+
     home()
 
 def home():
+
 
     text_home = bold + "\nYou recently lost your job and a hard time living with the little money available,\
 and also owe people some money." + reset_bold
@@ -19,14 +23,14 @@ and also owe people some money." + reset_bold
     print("Make a decision")
     print("1 - Apply for a job")
     print("2 - Gamble the rest of the money you have at a casino")
-
     option = input("Enter your choice: ")
 
+    while not(option == '1' or option == '2'):
+        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
     if option == '1':
         job()
     elif option == '2':
         casino()
-    print('Invalid Answer')
 
 def job():
     text_job = bold + "\nYou forgot to wake up early the day of the interview, and arrive an hour late and fail the interview." + reset_bold
@@ -36,11 +40,13 @@ def job():
     print("2- Walk to the train station to go home")
 
     option = input("Enter your choice: ")
+    while not(option == '1' or option == '2'):
+        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
     if option == '1':
         casino()
     elif option == '2':
         train_station()
-    print('Invalid Answer')
+
 
 def casino():
     text_casino = bold + "\nYou start making money, however get greedy and lose it all in the end." + reset_bold
@@ -60,11 +66,13 @@ def train_station():
     print("1 - Call the number and accept the offer.")
     print("2 - Ignore the card, and buy lunch with the money. ")
     option = input("Enter your choice: ")
+    while not(option == '1' or option == '2'):
+        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
     if option == '1':
         van()
     elif option == '2':
         financial()
-    print('Invalid Answer')
+
 
 def financial():
     text_financial = bold + "One week has passed, and poor financial decisions have led to you losing all the money. \
@@ -74,11 +82,12 @@ def financial():
     print("1 - Throw out the card and find a new job")
     print("2 - Call the number and accept the offer.")
     option = input("Enter your choice: ")
+    while not(option == '1' or option == '2'):
+        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
     if option == '1':
         homeless()
     elif option == '2':
         van()
-    print('Invalid Answer')
 
 def homeless():
     text_homeless = bold + "You Lose\nafter a couple days, you quickly realize that you have no chance of \
@@ -91,20 +100,21 @@ def van():
     text_van = bold + "\nYou get picked up in a van and wake up in a facility with hundreds of other people. \
 The people running the facility announces that there will be 6 games played over 6 days with a grand prize of 36 million USD." + reset_bold
     print(textwrap.fill(text=text_van, width=80, replace_whitespace=False))
+    has_friends = False
     print("Make a decision")
     print("1 - Try to form an alliance ")
     print("2 - Sit alone and ignore others")
     option = input("Enter your choice: ")
+    while not(option == '1' or option == '2'):
+        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
     if option == '1':
-        #friends = True
-        #return friends
-        first_game()
+        has_friends = True
+        first_game(has_friends)
     if option == '2':
-        #friends = False
-        #return friends
-        first_game()
+        has_friends = False
+        first_game(has_friends)
 
-def first_game():
+def first_game(has_friends):
     text_first_game = bold + "\nThe first game is announced and it is red light, green light. However, \
 you have only 5 minutes to get across the line." + reset_bold
     print(textwrap.fill(text=text_first_game, width=80, replace_whitespace=False))
@@ -113,10 +123,12 @@ you have only 5 minutes to get across the line." + reset_bold
     print("2 - Stand behind people to hide movement and move at a comfortable pace.")
     print("3 - Run and try to get across quickly")
     option = input("Enter your choice: ")
+    while not(option == '1' or option == '2' or option == '3'):
+        option = input("Invalid Answer. Enter you choice again(1, 2, or 3): ")
     if option == '1':
         lose_slow()
     if option == '2':
-        first_win()
+        first_win(has_friends)
     if option == '3':
         lose_fast()
 
@@ -133,40 +145,38 @@ however you trip and get shot." + reset_bold
     input("Press Enter to Restart")
     home()
 
-def first_win():
+def first_win(has_friends):
     text_first_win = bold + "\nYou barely get across with only 20 seconds left on the timer and\
  then head back to the main room " + reset_bold
     print(textwrap.fill(text=text_first_win, width=80, replace_whitespace=False))
     input("Press Enter to Continue")
-    second_game()
+    second_game(has_friends)
 
 
-def second_game():
+def second_game(has_friends):
     text_second_game = bold + "\nThe hosts have now brought everyone to play a new game in an indoor playground.\
-In front of you, there are four shapes to choose from."
+In front of you, there are four shapes to choose from." + reset_bold
     print(textwrap.fill(text=text_second_game, width=80, replace_whitespace=False))
     print("1 - \u25B3")
     print("2 - \u2602")
     print("3 - \u2299")
     print("4 - \u2605")
     option = input("Choose a shape: ")
+    while not(option == '1' or option == '2' or option == '3' or option == '4'):
+        option = input("Invalid Answer. Enter you choice again(1, 2, 3, or 4): ")
     if option == '1':
-        good_shape = True
-        dalgona()
+        dalgona(True, has_friends)
     elif option == '2':
-        good_shape = False
-        dalgona()
+        dalgona(False, has_friends)
     elif option == '3':
-        good_shape = True
-        dalgona()
+        dalgona(True, has_friends)
     elif option == '4':
-        good_shape = False
-        dalgona()
-    else:
-        print('Invalid Answer')
+        dalgona(False, has_friends)
 
 
-def dalgona():
+
+
+def dalgona(shape, has_friends):
     text_dalgona = bold + "\nThe game is now revealed as Dalgona. Players must carve out their \
  shape using a pin without any cracks within a 10 minute time frame."
     print(textwrap.fill(text=text_dalgona, width=80, replace_whitespace=False))
@@ -174,16 +184,19 @@ def dalgona():
     print("2 - Use a lighter you found on the floor")
     print("3 - Use your tongue and lick the cookie to melt the shape out")
     option = input("Choose a shape: ")
-    if option == '1' and good_shape == True:
+    while not(option == '1' or option == '2' or option == '3'):
+        option = input("Invalid Answer. Enter you choice again(1, 2, or 3): ")
+    if option == '1' and shape == True:
         third_game()
     elif option == '2':
         third_game()
     elif option == '3':
         third_game()
-    elif option == '1' and good_shape == False:
+    elif option == '1' and shape == False:
         lose_dalgona()
-    else:
-        print('Invalid Answer')
+
+def night_time1():
+    print('random')
 
 def lose_dalgona():
     print('hi')

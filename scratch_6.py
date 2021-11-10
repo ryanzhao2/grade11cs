@@ -4,3 +4,4 @@ for i in range(10):
     print(random.choice(hello_list))
     for i in range(trials):
         greet = random.choice(greetings)
+        break
