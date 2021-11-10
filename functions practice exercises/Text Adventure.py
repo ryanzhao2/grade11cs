@@ -1,17 +1,15 @@
 import textwrap
+
 bold = "\033[1m"
 reset_bold = "\033[0m"
 new_line = "\n" * 20
+short_line = "\n" * 3
+good_shape = True
 
 def start():
     print(bold + "Welcome to Squid Game" + reset_bold)
-    start = input("Enter 1 to start: ")
-
-    if start == '1':
-        home()
-    print('Invalid Answer')
-
-
+    input("Press Enter to Continue: ")
+    home()
 
 def home():
 
@@ -49,10 +47,9 @@ def casino():
     print(textwrap.fill(text=text_casino, width=80, replace_whitespace=False))
     print("1 - Walk to the train station to go home")
 
-    option = input("Enter 1 to continue: ")
-    if option == '1':
-        train_station()
-    print('Invalid Answer')
+    input("Press Enter to Continue: ")
+    train_station()
+
 
 def train_station():
     text_train_station = bold + "\nYou arrive at the train station and someone offers you to play a game to win some money,\
@@ -87,10 +84,8 @@ def homeless():
     text_homeless = bold + "You Lose\nafter a couple days, you quickly realize that you have no chance of \
     getting a job with the poor living conditions you're in and live the rest of your life homeless " + reset_bold
     print(textwrap.fill(text=text_homeless, width=80, replace_whitespace=False))
-    option = input("Enter 1 to restart")
-    if option == '1':
-        home()
-    print('Invalid Answer')
+    input("Press Enter to Restart: ")
+    home()
 
 def van():
     text_van = bold + "\nYou get picked up in a van and wake up in a facility with hundreds of other people. \
@@ -128,28 +123,22 @@ you have only 5 minutes to get across the line." + reset_bold
 def lose_slow():
     text_lose_slow = bold + "\nYou Lose\nThe timer runs out you get shot after only making it past halfway." + reset_bold
     print(textwrap.fill(text=text_lose_slow, width=80, replace_whitespace=False))
-    option = input("Enter 1 to restart")
-    if option == '1':
-        home()
-    print('Invalid Answer')
+    input("Press Enter to Restart")
+    home()
 
 def lose_fast():
     text_lose_fast = bold + "\nYou Lose\nYou run at a quick pace and almost make it to the finish line,\
 however you trip and get shot." + reset_bold
     print(textwrap.fill(text=text_lose_fast, width=80, replace_whitespace=False))
-    option = input("Enter 1 to restart")
-    if option == '1':
-        home()
-    print('Invalid Answer')
+    input("Press Enter to Restart")
+    home()
 
 def first_win():
     text_first_win = bold + "\nYou barely get across with only 20 seconds left on the timer and\
-then head back to the main room " + reset_bold
+ then head back to the main room " + reset_bold
     print(textwrap.fill(text=text_first_win, width=80, replace_whitespace=False))
-    option = input("Enter 1 to get a good nights sleep: ")
-    if option == '1':
-        second_game()
-    print('Invalid Answer')
+    input("Press Enter to Continue")
+    second_game()
 
 
 def second_game():
@@ -161,6 +150,43 @@ In front of you, there are four shapes to choose from."
     print("3 - \u2299")
     print("4 - \u2605")
     option = input("Choose a shape: ")
+    if option == '1':
+        good_shape = True
+        dalgona()
+    elif option == '2':
+        good_shape = False
+        dalgona()
+    elif option == '3':
+        good_shape = True
+        dalgona()
+    elif option == '4':
+        good_shape = False
+        dalgona()
+    else:
+        print('Invalid Answer')
+
+
+def dalgona():
+    text_dalgona = bold + "\nThe game is now revealed as Dalgona. Players must carve out their \
+ shape using a pin without any cracks within a 10 minute time frame."
+    print(textwrap.fill(text=text_dalgona, width=80, replace_whitespace=False))
+    print("1 - Carve it out slowly and carefully ")
+    print("2 - Use a lighter you found on the floor")
+    print("3 - Use your tongue and lick the cookie to melt the shape out")
+    option = input("Choose a shape: ")
+    if option == '1' and good_shape == True:
+        third_game()
+    elif option == '2':
+        third_game()
+    elif option == '3':
+        third_game()
+    elif option == '1' and good_shape == False:
+        lose_dalgona()
+    else:
+        print('Invalid Answer')
+
+def lose_dalgona():
+    print('hi')
 
 def third_game():
     pass
