@@ -10,23 +10,37 @@ good_shape = True
 players = ['young woman', 'middle-aged woman', 'old man', 'middle-aged man',\
            'body builder', 'teenager', 'middle-aged man', 'old lady', 'intelligent man','young woman']
 
+from time import sleep
+
+
+def slow_print(s, line_length):
+    line_end = False
+
+    for i in range(len(s)):
+        if (i + 1) % line_length == 0 and i > 0:
+            line_end = True
+        if line_end and (s[i] == " " or s[i] == "\n"):
+            print("")
+            line_end = False
+        else:
+            print(s[i], end="")
+        sleep(1 / 20)
 
 def start():
-    print(bold + "Welcome to Squid Game" + reset_bold)
+    slow_print(bold + "Welcome to Squid Game\n" + reset_bold, 80)
     input("Press Enter to Continue: ")
+
     home()
 
 def home():
-    text_home = bold + "\nYou recently lost your job and a hard time living with the little money available,\
-and also owe people some money." + reset_bold
-    print(textwrap.fill(text=text_home, width=80, replace_whitespace=False))
-    print("Make a decision")
+    slow_print(bold + "\nYou recently lost your job and have a hard time living with the little money available,\
+ and also owe people some money.\n" + reset_bold, 80)
     print("1 - Apply for a job")
     print("2 - Gamble the rest of the money you have at a casino")
     option = input("Enter your choice: ")
 
     while not(option == '1' or option == '2'):
-        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
+        option = input("Invalid Answer. Enter your choice again(1 or 2): ")
     if option == '1':
         job()
     elif option == '2':
@@ -41,7 +55,7 @@ def job():
 
     option = input("Enter your choice: ")
     while not(option == '1' or option == '2'):
-        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
+        option = input("Invalid Answer. Enter your choice again(1 or 2): ")
     if option == '1':
         casino()
     elif option == '2':
@@ -67,7 +81,7 @@ def train_station():
     print("2 - Ignore the card, and buy lunch with the money. ")
     option = input("Enter your choice: ")
     while not(option == '1' or option == '2'):
-        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
+        option = input("Invalid Answer. Enter your choice again(1 or 2): ")
     if option == '1':
         van()
     elif option == '2':
@@ -83,7 +97,7 @@ def financial():
     print("2 - Call the number and accept the offer.")
     option = input("Enter your choice: ")
     while not(option == '1' or option == '2'):
-        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
+        option = input("Invalid Answer. Enter your choice again(1 or 2): ")
     if option == '1':
         homeless()
     elif option == '2':
@@ -106,7 +120,7 @@ The people running the facility announces that there will be 6 games played over
     print("2 - Sit alone and ignore others")
     option = input("Enter your choice: ")
     while not(option == '1' or option == '2'):
-        option = input("Invalid Answer. Enter you choice again(1 or 2): ")
+        option = input("Invalid Answer. Enter your choice again(1 or 2): ")
     if option == '1':
         has_friends = True
         first_game(has_friends)
@@ -124,7 +138,7 @@ you have only 5 minutes to get across the line." + reset_bold
     print("3 - Run and try to get across quickly")
     option = input("Enter your choice: ")
     while not(option == '1' or option == '2' or option == '3'):
-        option = input("Invalid Answer. Enter you choice again(1, 2, or 3): ")
+        option = input("Invalid Answer. Enter your choice again(1, 2, or 3): ")
     if option == '1':
         lose_slow()
     if option == '2':
@@ -163,7 +177,7 @@ In front of you, there are four shapes to choose from." + reset_bold
     print("4 - \u2605")
     option = input("Choose a shape: ")
     while not(option == '1' or option == '2' or option == '3' or option == '4'):
-        option = input("Invalid Answer. Enter you choice again(1, 2, 3, or 4): ")
+        option = input("Invalid Answer. Enter your choice again(1, 2, 3, or 4): ")
     if option == '1':
         dalgona(True, has_friends)
     elif option == '2':
@@ -182,7 +196,7 @@ def dalgona(shape, has_friends):
     print("3 - Use your tongue and lick the cookie to melt the shape out")
     option = input("Choose a shape: ")
     while not(option == '1' or option == '2' or option == '3'):
-        option = input("Invalid Answer. Enter you choice again(1, 2, or 3): ")
+        option = input("Invalid Answer. Enter your choice again(1, 2, or 3): ")
     if option == '1' and shape == True:
         win_1(has_friends)
 
@@ -232,7 +246,7 @@ def midnight_fight(has_friends):
         print("3 - Go around and ask people if they want to form an alliance.")
     option = input("Make a choice: ")
     while not(option == '1' or option == '2' or option == '3'):
-        option = input("Invalid Answer. Enter you choice again(1, 2, or 3): ")
+        option = input("Invalid Answer. Enter your choice again(1, 2, or 3): ")
     if option == '1':
         third_game()
     if option == '2':
