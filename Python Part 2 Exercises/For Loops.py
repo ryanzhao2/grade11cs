@@ -57,7 +57,7 @@ times_table_num = int(input("Enter the times table you'd like to see: "))
 print_times_table(times_table_num)
 """
 #QUESTION 4
-
+"""
 def print_temperature_table():
      print("Celcius to Fahrenheit Table\n---------------------------")
      for C in range(-20, 36, 5):
@@ -68,3 +68,18 @@ def print_temperature_table():
 
 #MAIN
 print_temperature_table()
+"""
+
+#QUESTION 10
+for i in range(1, 11):
+     print("$"*i)
+
+for i in range(10, 0, -1):
+     print("$"*i)
+
+lines = 10
+for i in range(1, lines+1):
+     print(" "*(lines-i)+"$"*i)
+
+for i in range(lines, 1-1, -1):
+     print(" "*(lines-i)+"$"*i)

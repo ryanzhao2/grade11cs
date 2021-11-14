@@ -1,9 +1,11 @@
+import sys
 import textwrap
 import random
 from time import sleep
 
 bold = "\033[1m"
 reset_bold = "\033[0m"
+text_length = 80
 new_line = "\n" * 20
 short_line = "\n" * 3
 good_shape = True
@@ -14,6 +16,8 @@ from time import sleep
 
 
 def slow_print(s, line_length):
+    #stdin = sys.stdin
+    #sys.stdin = sys.stderr
     line_end = False
 
     for i in range(len(s)):
@@ -24,17 +28,17 @@ def slow_print(s, line_length):
             line_end = False
         else:
             print(s[i], end="")
-        sleep(1 / 20)
-
+        sleep(1 / 5)
+    #sys.stdin=stdin
 def start():
-    slow_print(bold + "Welcome to Squid Game\n" + reset_bold, 80)
+    slow_print(bold + "Welcome to Squid Game\n" + reset_bold, text_length)
     input("Press Enter to Continue: ")
 
     home()
 
 def home():
     slow_print(bold + "\nYou recently lost your job and have a hard time living with the little money available,\
- and also owe people some money.\n" + reset_bold, 80)
+ and also owe people some money.\n" + reset_bold, text_length)
     print("1 - Apply for a job")
     print("2 - Gamble the rest of the money you have at a casino")
     option = input("Enter your choice: ")
@@ -47,8 +51,8 @@ def home():
         casino()
 
 def job():
-    text_job = bold + "\nYou forgot to wake up early the day of the interview, and arrive an hour late and fail the interview." + reset_bold
-    print(textwrap.fill(text=text_job, width=80, replace_whitespace=False))
+    slow_print(bold + "\nYou forgot to wake up early the day of the interview, and arrive an hour late and fail the interview.\n"\
+               + reset_bold, text_length)
     print("Make a decision")
     print("1- Gamble the rest of the money you have at a casino")
     print("2- Walk to the train station to go home")
@@ -63,10 +67,8 @@ def job():
 
 
 def casino():
-    text_casino = bold + "\nYou start making money, however get greedy and lose it all in the end." + reset_bold
-    print(textwrap.fill(text=text_casino, width=80, replace_whitespace=False))
+    slow_print(bold + "\nYou start making money, however get greedy and lose it all in the end.\n" + reset_bold, text_length)
     print("1 - Walk to the train station to go home")
-
     input("Press Enter to Continue: ")
     train_station()
 
@@ -266,23 +268,27 @@ def third_game():
     strength = 0
     sleep(2)
     for i in range(5):
-        print(random.choice(players))
-    if random.choice(players) == 'young woman':
-        strength += 2
-    if random.choice(players) == 'old man':
-        strength += 2
-    if random.choice(players) == 'old woman':
-        strength += 1
-    if random.choice(players) == 'middle-aged man':
-        strength += 3
-    if random.choice(players) == 'middle-aged woman':
-        strength += 1.5
-    if random.choice(players) == 'intelligent man':
-        strength += 4
-    if random.choice(players) == 'body builder':
-        strength += 5
-    if random.choice(players) == 'teenager':
-        strength += 1
+        team = (random.choice(players))
+        opponents_team = (random.choice(players))
+        print(team)
+        if team == 'young woman':
+            strength += 2
+        if team == 'old man':
+            strength += 1.5
+        if team == 'old woman':
+            strength += 1
+        if team == 'middle-aged man':
+            strength += 3
+        if team == 'middle-aged woman':
+            strength += 1.5
+        if team == 'intelligent man':
+            strength += 4
+        if team == 'body builder':
+            strength += 5
+        if team == 'teenager':
+            strength += 1
+        if team == 'old lady':
+            strength += 0.5
     print(strength)
 
 
