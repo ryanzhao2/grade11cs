@@ -3,21 +3,26 @@ import textwrap
 import random
 from time import sleep
 
+fancy_line = "~" * 75
 bold = "\033[1m"
 reset_bold = "\033[0m"
 text_length = 80
-new_line = "\n" * 20
+new_line = "\n" * 30
 short_line = "\n" * 3
 good_shape = True
 players = ['young woman', 'middle-aged woman', 'old man', 'middle-aged man',\
-           'body builder', 'teenager', 'middle-aged man', 'old lady', 'intelligent man','young woman']
+           'body builder', 'teenager', 'middle-aged man', 'old lady', 'intelligent man', 'young woman']
+coin = ['heads', 'tails']
+even_marbles = [2, 4, 6, 8, 10]
+odd_marbles = [1, 3, 5, 7, 9]
+total_marbles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_or_odd = ['even', 'odd']
+player_number = ['player_1', 'player_2']
 
-from time import sleep
+
 
 
 def slow_print(s, line_length):
-    #stdin = sys.stdin
-    #sys.stdin = sys.stderr
     line_end = False
 
     for i in range(len(s)):
@@ -28,8 +33,8 @@ def slow_print(s, line_length):
             line_end = False
         else:
             print(s[i], end="")
-        sleep(1 / 5)
-    #sys.stdin=stdin
+        sleep(1 / 10000000000000000000000000)
+"""
 def start():
     slow_print(bold + "Welcome to Squid Game\n" + reset_bold, text_length)
     input("Press Enter to Continue: ")
@@ -263,41 +268,169 @@ def midnight_die():
     home()
 
 def third_game():
-    text_third_game = bold + "\nNext game is revealed as Tug of War. You will now be assigned a random team of 5.\n~~~~~~~~~~" + reset_bold
+    text_third_game = bold + f"\nNext game is revealed as Tug of War. You will now be assigned a random team of 5.\n{fancy_line}" + reset_bold
     print(textwrap.fill(text=text_third_game, width=80, replace_whitespace=False))
     strength = 0
+    opponents_strength = 0
     sleep(2)
+    team_list = []
+    opponents_team_list = []
     for i in range(5):
-        team = (random.choice(players))
-        opponents_team = (random.choice(players))
-        print(team)
+        team = random.choice(players)
+        opponents_team = random.choice(players)
+        team_list.append(team)
+        opponents_team_list.append(opponents_team)
+
+
         if team == 'young woman':
             strength += 2
-        if team == 'old man':
+
+        elif team == 'old man':
             strength += 1.5
-        if team == 'old woman':
+
+        elif team == 'old woman':
             strength += 1
-        if team == 'middle-aged man':
+
+        elif team == 'middle-aged man':
             strength += 3
-        if team == 'middle-aged woman':
+
+        elif team == 'middle-aged woman':
             strength += 1.5
-        if team == 'intelligent man':
+
+        elif team == 'intelligent man':
             strength += 4
-        if team == 'body builder':
+
+        elif team == 'body builder':
             strength += 5
-        if team == 'teenager':
+
+        elif team == 'teenager':
             strength += 1
-        if team == 'old lady':
+
+        elif team == 'old lady':
             strength += 0.5
-    print(strength)
+
+        elif opponents_team == 'young woman':
+            opponents_strength += 2
+
+        elif opponents_team == 'old man':
+            opponents_strength += 1.5
+
+        elif opponents_team == 'old woman':
+            opponents_strength += 1
+
+        elif opponents_team == 'middle-aged man':
+            opponents_strength += 3
+
+        elif opponents_team == 'middle-aged woman':
+            opponents_strength += 1.5
+
+        elif opponents_team == 'intelligent man':
+            opponents_strength += 3.5
+
+        elif opponents_team == 'body builder':
+            opponents_strength += 4
+
+        elif opponents_team == 'teenager':
+            opponents_strength += 1
+
+        elif opponents_team == 'old lady':
+            opponents_strength += 0.5
+    print(f'Your Team is: {team_list}\n')
+    print(f'Your Opponents Team is: {opponents_team_list}\n\nMake a Choice: \n')
+
+    print("1 - Use entirely brute force to try to win the game")
+    print("2 - Create a plan that doesnt require more force in order to win")
+    print("3 - Find a way to not play the game")
+    option = input("Enter your decision: ")
+    while not(option == '1' or option == '2' or option == '3'):
+        option = input("Invalid Answer. Enter your choice again(1, 2, or 3): ")
+    if option == '1' and strength > opponents_strength:
+        win_tug_of_war()
+    elif option == '2' and 'intelligent man' in team_list and 'intelligent man' not in opponents_team_list:
+        win_tug_of_war()
+    elif option == '3':
+        lose_tug_of_war()
+    elif option == '2' and 'intelligent man' in team_list and 'intelligent man' in opponents_team_list:
+        flip_coin()
+    elif option == '1' and strength == opponents_strength:
+        flip_coin()
+    elif option == '2' and 'intelligent man' not in team_list and 'intelligent man' not in opponents_team_list:
+        flip_coin()
+    else:
+        lose_tug_of_war()
 
 
+
+def win_tug_of_war():
+    slow_print(bold + "You win tug of war with a better team. Congratulations, you get to move on to the fourth game\n" + reset_bold, text_length)
+    input("Press Enter to get a good nights sleep: ")
+    fourth_game()
+
+def lose_tug_of_war():
+    slow_print(bold + "Bad team or bad choice, either one you still lose.\n" + reset_bold,text_length)
+
+def flip_coin():
+    slow_print(bold + "Looks like the teams have equal intelligence, flip a coin to determine your fate. Heads you win, tails you lose\n" + reset_bold, text_length)
+    heads_tails = random.choice(coin)
+    if heads_tails == 'heads':
+        print("You got heads")
+        win_tug_of_war()
+    else:
+        print("You got tails, unfortunate")
+        lose_tug_of_war()
+"""
 def fourth_game():
-    pass
+    slow_print(bold + "After the 3rd game, there are only 40 players remaining. The game hosts now reveal to you that the 4th game is marbles.\n\n\
+Here are the Rules of the game\n" + reset_bold, text_length)
+    slow_print("You and your opponent start off with 10 marbles. One player chooses a number of marbles and places it in their fist infront of their opponent.\
+ The opponent then guesses if the number of marbles in their hand is even or odd. If they are correct the player must give those marbles to the opponent and if they are wrong,\
+ the opponent must give the player the number of marbles in their hand. They then switch turns with the game ending when one player has all the marbles.", text_length)
+    input("\n\nPress enter when you understand the rules: ")
+
+    fourth_start()
+    
+def fourth_start():
+    player_set = random.choice(player_number)
+    print(f'\nYou are {player_set}')
+    marbles = 10
+    while marbles < 20 and marbles > 0:
+        marble_even_odd_choice = random.choice(even_or_odd)
+        total_marble_choice = random.choice(total_marbles)
+        if player_set == 'player_1':
+
+            choice = int(input("Choose a number of marbles: "))
+            while(choice > marbles and choice != 0):
+                print(f'Choose a number within {marbles} marbles')
+                choice = int(input("Choose a number of marbles: "))
+            player_set = 'player_2'
+            if marble_even_odd_choice == 'even' and choice % 2 == 0 and choice <= marbles and choice >= 1:
+                print(f'Your opponent chose: {marble_even_odd_choice}\nYou have {marbles - choice} marbles left')
+                marbles -= choice
+            elif marble_even_odd_choice == 'odd' and choice % 2 == 1 and choice <= marbles and choice >= 1:
+                print(f'Your opponent chose: {marble_even_odd_choice}\nYou have {marbles - choice} marbles left')
+                marbles -= choice
+            else:
+                print(f'Your opponent chose: {marble_even_odd_choice}\nYou have {marbles + choice} marbles left')
+                marbles += choice
+        if player_set == 'player_2':
+            choose_even_or_odd = str(input("\nChoose an even or odd number of marbles: "))
+            while not (choose_even_or_odd == 'even' or choose_even_or_odd == 'odd'):
+                choose_even_or_odd = str(input("Invalid Answer. Enter your choice again(even or odd): "))
+            player_set = 'player_1'
+            if total_marble_choice % 2 == 0 and choose_even_or_odd == 'even':
+                print(f'Your opponent had {total_marble_choice} marbles, you now have {total_marble_choice + marbles}')
+                marbles += total_marble_choice
+            elif total_marble_choice % 2 == 1 and choose_even_or_odd == 'odd':
+                print(f'Your opponent had {total_marble_choice} marbles, you now have {total_marble_choice + marbles}')
+                marbles += total_marble_choice
+            else:
+                print(f'Your opponent had {total_marble_choice} marbles, you now have {marbles - total_marble_choice}')
+                marbles -= total_marble_choice
 
 def fifth_game():
     pass
 
 def sixth_game():
     pass
-start()
+#start()
+fourth_game()
