@@ -473,11 +473,6 @@ def fifth_game():
         print('You win and now can move on to the final game.')
         sixth_game_rules()
 
-
-
-
-
-
 def sixth_game_rules():
     slow_print(bold + "Wow, after 5 days of games, you managed to survive and now have arrived at the final game with one other opponent.\
  For this game, you will be playing squid game. Both players will have a steak knife. You will be playing as the attacker.\
@@ -502,8 +497,6 @@ def sixth_game_part_1():
         slow_print(bold + "The knife throw is uneffective and after receiving a minor cut, he now has two knives and you have none.\
  He then stabs you with both, leaving you with no options. You made it so far, however this is as far as you go." + reset_bold, text_length)
         home()
-
-
 
 def sixth_game_part_2():
     print("That was good, your opponent now has trouble seeing with one eye, however he stabs you in the stomach.")
