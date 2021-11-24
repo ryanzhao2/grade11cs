@@ -35,7 +35,7 @@ print(count)
 #look up how many seconds one week has
 """
 
-#QUESTION 2
+#QUESTION #2
 """
 for i in range(5, 1001, 5):
      print(i)
@@ -56,7 +56,7 @@ def print_times_table(table_number):
 times_table_num = int(input("Enter the times table you'd like to see: "))
 print_times_table(times_table_num)
 """
-#QUESTION 4
+#QUESTION #4
 """
 def print_temperature_table():
      print("Celcius to Fahrenheit Table\n---------------------------")
@@ -70,7 +70,42 @@ def print_temperature_table():
 print_temperature_table()
 """
 
+#QUESTION #5
+"""
+total = 0
+for num in range(1, 101):
+     total += num
+print(total)
+"""
+
+#QUESTION #6
+"""
+def sum_range_values(low, high):
+     sum = 0
+     for i in range(low, high+1):
+          sum += i
+     return sum
+
+#MAIN
+lowEnd = int(input("Enter the low end of range"))
+highEnd = int(input("Enter the high end of range"))
+print(sum_range_values(lowEnd, highEnd))
+"""
+
+#QUESTION #7
+def sum_range_values(low, high):
+     for i in range((high - low)):
+          
+
+
+
+#MAIN
+lowEnd = int(input("Enter the low end of range"))
+highEnd = int(input("Enter the high end of range"))
+print(sum_range_values(lowEnd, highEnd))
+
 #QUESTION 10
+"""
 for i in range(1, 11):
      print("$"*i)
 
@@ -83,3 +118,4 @@ for i in range(1, lines+1):
 
 for i in range(lines, 1-1, -1):
      print(" "*(lines-i)+"$"*i)
+"""
