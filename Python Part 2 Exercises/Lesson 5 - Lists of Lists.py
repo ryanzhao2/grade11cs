@@ -1,4 +1,4 @@
-
+"""
 def generate_list_books(filename):
 
     book_list = []
@@ -18,15 +18,26 @@ def generate_list_books(filename):
 
     return book_list
 
+
+
+#QUESTION #1
 def print_books(list_of_books):
-    pass
-    #for book in list_of_books:
 
+    for book in list_of_books:
+        print(f' {book[0][0:30]:<30} by {book[1][0:20]:<20} {str(book[5])[0:4]} rated {str(book[2])[0:3]}')
 
-
+#QUESTION #2
 def print_detailed_book(list_of_books):
+    format = '-'
+    for book in list_of_books:
+        print(f' {book[0]}\n'
+              f' by: {book[1]}\n'
+              f' {book[5]}\n'
+              f' {format * len(book[0])}\n'
+              f' ${book[4]:.2f}\n\n'
+              f' {book[6]}\n'
+              f' rated {book[2]}   for  {book[3]} reviews\n\n\n')
 
-    pass
 
 
 
@@ -43,3 +54,4 @@ def main():
 
 
 main()
+"""
