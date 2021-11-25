@@ -40,8 +40,9 @@ print(count)
 for i in range(5, 1001, 5):
      print(i)
 """
-"""
+
 #QUESTION 3
+"""
 def print_times_table(table_number):
      count = 1
      for i in range(1, 101):
@@ -93,16 +94,39 @@ print(sum_range_values(lowEnd, highEnd))
 """
 
 #QUESTION #7
+"""
 def sum_range_values(low, high):
-     for i in range((high - low)):
-          
+     for i in range((high - low + 1)):
+          print(high - i)
 
 
 
 #MAIN
 lowEnd = int(input("Enter the low end of range"))
 highEnd = int(input("Enter the high end of range"))
-print(sum_range_values(lowEnd, highEnd))
+sum_range_values(lowEnd, highEnd)
+"""
+#QUESTION #8
+"""
+import time
+for i in range(10):
+     time.sleep(0.5)
+     print(10 - i)
+
+"""
+
+#QUESTION #9
+"""
+def sum_squares( some_num ):
+     sum = 0
+     for i in range(some_num):
+          sum += ((1 + i) ** 2)
+     print(sum)
+
+#MAIN
+n = 5
+sum_squares(n)
+"""
 
 #QUESTION 10
 """
@@ -118,4 +142,24 @@ for i in range(1, lines+1):
 
 for i in range(lines, 1-1, -1):
      print(" "*(lines-i)+"$"*i)
+"""
+
+#QUESTION #11
+"""
+for i in range(5):
+     print(" "*i + str(i+1))
+
+print("\n")
+
+for i in range(5):
+
+     print(" "*(5-i-1) + str(i+1))
+"""
+
+#QUESTION #12
+"""
+pattern = '*'
+user = int(input("Enter an odd number"))
+for i in range((user // 2) + 1):
+     print(f'{(pattern * (i * 2) + pattern):^25}')
 """
