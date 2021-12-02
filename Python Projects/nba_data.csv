@@ -1,0 +1,334 @@
+Date,Home Team,Home Conference,Home Division,Home Score,Visitor Team,Visitor Conference,Visitor Division,Visitor Score,Post Season,Season
+1991-01-21,Indiana Pacers,East,Central,114,Los Angeles Lakers,West,Pacific,120,FALSE,1990
+1991-01-21,Washington Wizards,East,Southeast,121,Orlando Magic,East,Southeast,119,FALSE,1990
+1991-01-22,Atlanta Hawks,East,Southeast,118,Miami Heat,East,Southeast,107,FALSE,1990
+1991-01-22,Portland Trail Blazers,West,Northwest,123,Phoenix Suns,West,Pacific,116,FALSE,1990
+1991-01-23,Boston Celtics,East,Atlantic,111,Detroit Pistons,East,Central,94,FALSE,1990
+1991-01-23,Sacramento Kings,West,Pacific,95,Milwaukee Bucks,East,Central,91,FALSE,1990
+1991-01-24,Charlotte Hornets,East,Southeast,93,Los Angeles Lakers,West,Pacific,113,FALSE,1990
+1991-01-25,Phoenix Suns,West,Pacific,128,Oklahoma City Thunder,West,Northwest,113,FALSE,1990
+1991-01-25,Golden State Warriors,West,Pacific,127,Milwaukee Bucks,East,Central,98,FALSE,1990
+1991-01-26,Houston Rockets,West,Southwest,103,Cleveland Cavaliers,East,Central,97,FALSE,1990
+1991-01-26,Charlotte Hornets,East,Southeast,79,Philadelphia 76ers,East,Atlantic,75,FALSE,1990
+1991-01-29,Los Angeles Lakers,West,Pacific,110,Brooklyn Nets,East,Atlantic,89,FALSE,1990
+1991-03-21,Golden State Warriors,West,Pacific,136,Denver Nuggets,West,Northwest,116,FALSE,1990
+1991-03-22,Los Angeles Lakers,West,Pacific,92,Milwaukee Bucks,East,Central,99,FALSE,1990
+1991-03-23,Orlando Magic,East,Southeast,105,Dallas Mavericks,West,Southwest,93,FALSE,1990
+1991-04-03,Houston Rockets,West,Southwest,102,Dallas Mavericks,West,Southwest,86,FALSE,1990
+1991-04-04,Phoenix Suns,West,Pacific,98,Los Angeles Lakers,West,Pacific,102,FALSE,1990
+1991-04-05,Detroit Pistons,East,Central,101,Minnesota Timberwolves,West,Northwest,82,FALSE,1990
+1991-11-08,San Antonio Spurs,West,Southwest,107,Cleveland Cavaliers,East,Central,101,FALSE,1991
+1991-11-09,Oklahoma City Thunder,West,Northwest,118,Indiana Pacers,East,Central,111,FALSE,1991
+1991-12-17,Oklahoma City Thunder,West,Northwest,116,LA Clippers,West,Pacific,99,FALSE,1991
+1991-12-21,Minnesota Timberwolves,West,Northwest,87,LA Clippers,West,Pacific,100,FALSE,1991
+1992-04-15,Atlanta Hawks,East,Southeast,95,New York Knicks,East,Atlantic,94,FALSE,1991
+1992-04-16,LA Clippers,West,Pacific,96,Minnesota Timberwolves,West,Northwest,93,FALSE,1991
+1992-04-17,Oklahoma City Thunder,West,Northwest,130,Sacramento Kings,West,Pacific,106,FALSE,1991
+1992-04-19,Cleveland Cavaliers,East,Central,112,Atlanta Hawks,East,Southeast,108,FALSE,1991
+1992-11-06,Boston Celtics,East,Atlantic,113,Minnesota Timberwolves,West,Northwest,92,FALSE,1992
+1992-11-07,Washington Wizards,East,Southeast,98,Orlando Magic,East,Southeast,103,FALSE,1992
+1992-11-08,Portland Trail Blazers,West,Northwest,123,Denver Nuggets,West,Northwest,104,FALSE,1992
+1992-11-09,Chicago Bulls,East,Central,102,Indiana Pacers,East,Central,97,FALSE,1992
+1993-03-29,Utah Jazz,West,Northwest,101,Denver Nuggets,West,Northwest,114,FALSE,1992
+1993-03-30,Brooklyn Nets,East,Atlantic,91,Philadelphia 76ers,East,Atlantic,77,FALSE,1992
+1993-03-31,Indiana Pacers,East,Central,114,Washington Wizards,East,Southeast,95,FALSE,1992
+1993-04-02,Indiana Pacers,East,Central,118,Orlando Magic,East,Southeast,102,FALSE,1992
+1993-04-04,Indiana Pacers,East,Central,100,Phoenix Suns,West,Pacific,110,FALSE,1992
+1993-04-06,Milwaukee Bucks,East,Central,113,Chicago Bulls,East,Central,109,FALSE,1992
+1993-04-08,Golden State Warriors,West,Pacific,122,Los Angeles Lakers,West,Pacific,116,FALSE,1992
+1993-04-09,Phoenix Suns,West,Pacific,98,Denver Nuggets,West,Northwest,97,FALSE,1992
+1993-04-10,Golden State Warriors,West,Pacific,100,Dallas Mavericks,West,Southwest,94,FALSE,1992
+1993-04-10,Houston Rockets,West,Southwest,98,San Antonio Spurs,West,Southwest,88,FALSE,1992
+1993-04-11,Phoenix Suns,West,Pacific,112,Utah Jazz,West,Northwest,92,FALSE,1992
+1993-04-12,Detroit Pistons,East,Central,95,Chicago Bulls,East,Central,98,FALSE,1992
+1993-04-13,Boston Celtics,East,Atlantic,96,Indiana Pacers,East,Central,90,FALSE,1992
+1993-04-13,Orlando Magic,East,Southeast,110,Milwaukee Bucks,East,Central,91,FALSE,1992
+1993-04-14,Phoenix Suns,West,Pacific,98,Minnesota Timberwolves,West,Northwest,84,FALSE,1992
+1993-04-14,Detroit Pistons,East,Central,87,Atlanta Hawks,East,Southeast,84,FALSE,1992
+1993-04-15,Philadelphia 76ers,East,Atlantic,101,Orlando Magic,East,Southeast,85,FALSE,1992
+1993-04-16,LA Clippers,West,Pacific,122,Golden State Warriors,West,Pacific,115,FALSE,1992
+1993-04-16,Indiana Pacers,East,Central,100,New York Knicks,East,Atlantic,94,FALSE,1992
+1993-04-17,Miami Heat,East,Southeast,100,Boston Celtics,East,Atlantic,103,FALSE,1992
+1993-04-18,Milwaukee Bucks,East,Central,98,Indiana Pacers,East,Central,108,FALSE,1992
+1993-04-20,Minnesota Timberwolves,West,Northwest,95,Los Angeles Lakers,West,Pacific,107,FALSE,1992
+1993-04-20,Atlanta Hawks,East,Southeast,111,Indiana Pacers,East,Central,102,FALSE,1992
+1993-04-21,Philadelphia 76ers,East,Atlantic,107,Miami Heat,East,Southeast,97,FALSE,1992
+1993-04-21,Golden State Warriors,West,Pacific,132,Sacramento Kings,West,Pacific,105,FALSE,1992
+1993-04-22,Chicago Bulls,East,Central,109,Detroit Pistons,East,Central,103,FALSE,1992
+1993-04-22,LA Clippers,West,Pacific,98,Oklahoma City Thunder,West,Northwest,100,FALSE,1992
+1993-04-23,Detroit Pistons,East,Central,109,Indiana Pacers,East,Central,104,FALSE,1992
+1993-04-23,Philadelphia 76ers,East,Atlantic,84,New York Knicks,East,Atlantic,99,FALSE,1992
+1993-04-24,Orlando Magic,East,Southeast,104,Atlanta Hawks,East,Southeast,85,FALSE,1992
+1993-04-25,Detroit Pistons,East,Central,116,Brooklyn Nets,East,Atlantic,110,FALSE,1992
+1993-04-25,Minnesota Timberwolves,West,Northwest,113,Utah Jazz,West,Northwest,107,FALSE,1992
+1994-02-15,Minnesota Timberwolves,West,Northwest,97,Milwaukee Bucks,East,Central,90,FALSE,1993
+1994-02-16,Sacramento Kings,West,Pacific,94,Philadelphia 76ers,East,Atlantic,92,FALSE,1993
+1994-02-17,Dallas Mavericks,West,Southwest,73,Indiana Pacers,East,Central,84,FALSE,1993
+1994-02-18,Sacramento Kings,West,Pacific,90,Utah Jazz,West,Northwest,81,FALSE,1993
+1994-02-20,Portland Trail Blazers,West,Northwest,102,Boston Celtics,East,Atlantic,93,FALSE,1993
+1994-02-22,Brooklyn Nets,East,Atlantic,97,Miami Heat,East,Southeast,123,FALSE,1993
+1994-02-23,Philadelphia 76ers,East,Atlantic,102,Brooklyn Nets,East,Atlantic,106,FALSE,1993
+1994-02-24,Sacramento Kings,West,Pacific,102,Los Angeles Lakers,West,Pacific,90,FALSE,1993
+1994-02-25,Utah Jazz,West,Northwest,107,Phoenix Suns,West,Pacific,87,FALSE,1993
+1994-12-28,Oklahoma City Thunder,West,Northwest,121,Philadelphia 76ers,East,Atlantic,102,FALSE,1994
+1994-12-29,Houston Rockets,West,Southwest,126,Golden State Warriors,West,Pacific,124,FALSE,1994
+1994-12-30,Utah Jazz,West,Northwest,103,Houston Rockets,West,Southwest,111,FALSE,1994
+1995-01-04,Charlotte Hornets,East,Southeast,118,Portland Trail Blazers,West,Northwest,106,FALSE,1994
+1995-01-05,Houston Rockets,West,Southwest,108,Dallas Mavericks,West,Southwest,99,FALSE,1994
+1995-01-06,Brooklyn Nets,East,Atlantic,88,Charlotte Hornets,East,Southeast,89,FALSE,1994
+1995-01-07,Utah Jazz,West,Northwest,111,Philadelphia 76ers,East,Atlantic,90,FALSE,1994
+1995-01-11,Charlotte Hornets,East,Southeast,100,Minnesota Timberwolves,West,Northwest,91,FALSE,1994
+1995-01-13,Minnesota Timberwolves,West,Northwest,104,Detroit Pistons,East,Central,92,FALSE,1994
+1995-01-14,Orlando Magic,East,Southeast,91,Philadelphia 76ers,East,Atlantic,70,FALSE,1994
+1995-01-15,Oklahoma City Thunder,West,Northwest,131,Portland Trail Blazers,West,Northwest,124,FALSE,1994
+1995-01-16,Philadelphia 76ers,East,Atlantic,110,Detroit Pistons,East,Central,116,FALSE,1994
+1995-01-18,Miami Heat,East,Southeast,121,Boston Celtics,East,Atlantic,93,FALSE,1994
+1995-01-20,LA Clippers,West,Pacific,97,Portland Trail Blazers,West,Northwest,108,FALSE,1994
+1995-01-24,Orlando Magic,East,Southeast,110,Boston Celtics,East,Atlantic,97,FALSE,1994
+1995-01-27,Charlotte Hornets,East,Southeast,105,New York Knicks,East,Atlantic,90,FALSE,1994
+1995-01-28,Oklahoma City Thunder,West,Northwest,121,Los Angeles Lakers,West,Pacific,128,FALSE,1994
+1995-11-04,Oklahoma City Thunder,West,Northwest,103,Los Angeles Lakers,West,Pacific,89,FALSE,1995
+1995-11-05,Sacramento Kings,West,Pacific,99,LA Clippers,West,Pacific,82,FALSE,1995
+1995-11-07,Philadelphia 76ers,East,Atlantic,106,Sacramento Kings,West,Pacific,109,FALSE,1995
+1995-11-18,Washington Wizards,East,Southeast,102,Toronto Raptors,East,Atlantic,103,FALSE,1995
+1996-02-13,Sacramento Kings,West,Pacific,90,Minnesota Timberwolves,West,Northwest,94,FALSE,1995
+1996-02-16,Oklahoma City Thunder,West,Northwest,117,Phoenix Suns,West,Pacific,99,FALSE,1995
+1996-02-17,Detroit Pistons,East,Central,108,Toronto Raptors,East,Atlantic,95,FALSE,1995
+1996-02-18,Memphis Grizzlies,West,Southwest,109,Oklahoma City Thunder,West,Northwest,118,FALSE,1995
+1996-02-19,Detroit Pistons,East,Central,113,Minnesota Timberwolves,West,Northwest,83,FALSE,1995
+1996-02-20,Chicago Bulls,East,Central,102,Cleveland Cavaliers,East,Central,76,FALSE,1995
+1996-02-21,Philadelphia 76ers,East,Atlantic,57,Miami Heat,East,Southeast,66,FALSE,1995
+1996-02-23,New York Knicks,East,Atlantic,97,Atlanta Hawks,East,Southeast,108,FALSE,1995
+1996-02-24,Denver Nuggets,West,Northwest,99,Utah Jazz,West,Northwest,90,FALSE,1995
+1996-02-25,Miami Heat,East,Southeast,108,Philadelphia 76ers,East,Atlantic,101,FALSE,1995
+1996-02-25,Brooklyn Nets,East,Atlantic,111,Boston Celtics,East,Atlantic,105,FALSE,1995
+1996-02-26,Los Angeles Lakers,West,Pacific,114,New York Knicks,East,Atlantic,96,FALSE,1995
+1996-02-27,Dallas Mavericks,West,Southwest,115,Philadelphia 76ers,East,Atlantic,121,FALSE,1995
+1996-02-28,Memphis Grizzlies,West,Southwest,80,Los Angeles Lakers,West,Pacific,99,FALSE,1995
+1996-02-29,Denver Nuggets,West,Northwest,120,Dallas Mavericks,West,Southwest,137,FALSE,1995
+1996-03-01,Utah Jazz,West,Northwest,99,New York Knicks,East,Atlantic,88,FALSE,1995
+1996-03-02,Chicago Bulls,East,Central,107,Boston Celtics,East,Atlantic,75,FALSE,1995
+1996-03-03,Cleveland Cavaliers,East,Central,89,Toronto Raptors,East,Atlantic,100,FALSE,1995
+1996-03-04,Memphis Grizzlies,West,Southwest,81,Washington Wizards,East,Southeast,96,FALSE,1995
+1996-03-05,Portland Trail Blazers,West,Northwest,93,Houston Rockets,West,Southwest,100,FALSE,1995
+1996-11-01,Boston Celtics,East,Atlantic,98,Chicago Bulls,East,Central,107,FALSE,1996
+1996-11-01,Memphis Grizzlies,West,Southwest,85,Portland Trail Blazers,West,Northwest,114,FALSE,1996
+1996-11-02,Charlotte Hornets,East,Southeast,109,Toronto Raptors,East,Atlantic,98,FALSE,1996
+1996-11-05,Sacramento Kings,West,Pacific,80,Houston Rockets,West,Southwest,102,FALSE,1996
+1996-11-06,Milwaukee Bucks,East,Central,105,Memphis Grizzlies,West,Southwest,89,FALSE,1996
+1996-11-07,Sacramento Kings,West,Pacific,87,Atlanta Hawks,East,Southeast,91,FALSE,1996
+1996-11-08,Orlando Magic,East,Southeast,86,Brooklyn Nets,East,Atlantic,82,FALSE,1996
+1996-11-09,Chicago Bulls,East,Central,104,Boston Celtics,East,Atlantic,80,FALSE,1996
+1996-11-10,Los Angeles Lakers,West,Pacific,92,Atlanta Hawks,East,Southeast,85,FALSE,1996
+1996-11-12,Atlanta Hawks,East,Southeast,87,Cleveland Cavaliers,East,Central,83,FALSE,1996
+1996-11-15,Sacramento Kings,West,Pacific,103,Milwaukee Bucks,East,Central,99,FALSE,1996
+1996-11-16,Orlando Magic,East,Southeast,92,Toronto Raptors,East,Atlantic,87,FALSE,1996
+1996-11-17,Oklahoma City Thunder,West,Northwest,91,Memphis Grizzlies,West,Southwest,81,FALSE,1996
+1996-11-19,Milwaukee Bucks,East,Central,100,Dallas Mavericks,West,Southwest,97,FALSE,1996
+1996-11-20,Phoenix Suns,West,Pacific,99,Chicago Bulls,East,Central,113,FALSE,1996
+1996-11-21,Indiana Pacers,East,Central,87,Charlotte Hornets,East,Southeast,90,FALSE,1996
+1996-11-23,Milwaukee Bucks,East,Central,90,Washington Wizards,East,Southeast,95,FALSE,1996
+1996-11-26,Denver Nuggets,West,Northwest,117,Phoenix Suns,West,Pacific,108,FALSE,1996
+1996-11-27,San Antonio Spurs,West,Southwest,109,Portland Trail Blazers,West,Northwest,120,FALSE,1996
+1996-11-27,LA Clippers,West,Pacific,82,Miami Heat,East,Southeast,98,FALSE,1996
+1996-11-29,Philadelphia 76ers,East,Atlantic,100,Orlando Magic,East,Southeast,91,FALSE,1996
+1997-01-26,Milwaukee Bucks,East,Central,94,San Antonio Spurs,West,Southwest,76,FALSE,1996
+1997-01-28,Washington Wizards,East,Southeast,102,Orlando Magic,East,Southeast,82,FALSE,1996
+1997-05-05,Houston Rockets,West,Southwest,112,Oklahoma City Thunder,West,Northwest,102,TRUE,1996
+1997-05-06,Chicago Bulls,East,Central,100,Atlanta Hawks,East,Southeast,97,TRUE,1996
+1997-05-07,Houston Rockets,West,Southwest,101,Oklahoma City Thunder,West,Northwest,106,TRUE,1996
+1997-05-08,Chicago Bulls,East,Central,95,Atlanta Hawks,East,Southeast,103,TRUE,1996
+1997-05-09,Miami Heat,East,Southeast,88,New York Knicks,East,Atlantic,84,TRUE,1996
+1997-05-10,Atlanta Hawks,East,Southeast,80,Chicago Bulls,East,Central,100,TRUE,1996
+1997-05-11,New York Knicks,East,Atlantic,77,Miami Heat,East,Southeast,73,TRUE,1996
+1997-05-11,Oklahoma City Thunder,West,Northwest,106,Houston Rockets,West,Southwest,110,TRUE,1996
+1997-05-12,Utah Jazz,West,Northwest,98,Los Angeles Lakers,West,Pacific,93,TRUE,1996
+1997-05-13,Houston Rockets,West,Southwest,94,Oklahoma City Thunder,West,Northwest,100,TRUE,1996
+1997-10-31,Brooklyn Nets,East,Atlantic,97,Indiana Pacers,East,Central,95,FALSE,1997
+1997-10-31,Miami Heat,East,Southeast,114,Toronto Raptors,East,Atlantic,101,FALSE,1997
+1997-10-31,Detroit Pistons,East,Central,92,Washington Wizards,East,Southeast,79,FALSE,1997
+1997-10-31,Phoenix Suns,West,Pacific,110,LA Clippers,West,Pacific,100,FALSE,1997
+1997-10-31,Portland Trail Blazers,West,Northwest,83,Oklahoma City Thunder,West,Northwest,91,FALSE,1997
+2018-10-16,Boston Celtics,East,Atlantic,105,Philadelphia 76ers,East,Atlantic,87,FALSE,2018
+2018-10-16,Golden State Warriors,West,Pacific,108,Oklahoma City Thunder,West,Northwest,100,FALSE,2018
+2018-10-17,Charlotte Hornets,East,Southeast,112,Milwaukee Bucks,East,Central,113,FALSE,2018
+2018-10-17,Detroit Pistons,East,Central,103,Brooklyn Nets,East,Atlantic,100,FALSE,2018
+2018-10-17,Indiana Pacers,East,Central,111,Memphis Grizzlies,West,Southwest,83,FALSE,2018
+2018-10-20,Portland Trail Blazers,West,Northwest,121,San Antonio Spurs,West,Southwest,108,FALSE,2018
+2018-10-20,Los Angeles Lakers,West,Pacific,115,Houston Rockets,West,Southwest,124,FALSE,2018
+2018-10-21,Cleveland Cavaliers,East,Central,111,Atlanta Hawks,East,Southeast,133,FALSE,2018
+2018-10-21,Oklahoma City Thunder,West,Northwest,120,Sacramento Kings,West,Pacific,131,FALSE,2018
+2018-10-21,Denver Nuggets,West,Northwest,100,Golden State Warriors,West,Pacific,98,FALSE,2018
+2018-10-21,LA Clippers,West,Pacific,115,Houston Rockets,West,Southwest,112,FALSE,2018
+2018-10-22,Boston Celtics,East,Atlantic,90,Orlando Magic,East,Southeast,93,FALSE,2018
+2018-10-22,Toronto Raptors,East,Atlantic,127,Charlotte Hornets,East,Southeast,106,FALSE,2018
+2018-10-22,Milwaukee Bucks,East,Central,124,New York Knicks,East,Atlantic,113,FALSE,2018
+2018-10-22,Minnesota Timberwolves,West,Northwest,101,Indiana Pacers,East,Central,91,FALSE,2018
+2018-10-22,Dallas Mavericks,West,Southwest,115,Chicago Bulls,East,Central,109,FALSE,2018
+2018-10-22,Utah Jazz,West,Northwest,84,Memphis Grizzlies,West,Southwest,92,FALSE,2018
+2018-10-22,Portland Trail Blazers,West,Northwest,124,Washington Wizards,East,Southeast,125,FALSE,2018
+2018-10-22,Golden State Warriors,West,Pacific,123,Phoenix Suns,West,Pacific,103,FALSE,2018
+2018-10-22,Los Angeles Lakers,West,Pacific,142,San Antonio Spurs,West,Southwest,143,FALSE,2018
+2018-10-23,Detroit Pistons,East,Central,133,Philadelphia 76ers,East,Atlantic,132,FALSE,2018
+2018-10-23,New Orleans Pelicans,West,Southwest,116,LA Clippers,West,Pacific,109,FALSE,2018
+2018-10-23,Denver Nuggets,West,Northwest,126,Sacramento Kings,West,Pacific,112,FALSE,2018
+2018-10-24,Atlanta Hawks,East,Southeast,111,Dallas Mavericks,West,Southwest,104,FALSE,2018
+2018-10-24,Cleveland Cavaliers,East,Central,86,Brooklyn Nets,East,Atlantic,102,FALSE,2018
+2018-10-24,Miami Heat,East,Southeast,110,New York Knicks,East,Atlantic,87,FALSE,2018
+2018-10-24,Toronto Raptors,East,Atlantic,112,Minnesota Timberwolves,West,Northwest,105,FALSE,2018
+2018-10-24,Chicago Bulls,East,Central,112,Charlotte Hornets,East,Southeast,110,FALSE,2018
+2018-10-24,Houston Rockets,West,Southwest,89,Utah Jazz,West,Northwest,100,FALSE,2018
+2018-10-24,San Antonio Spurs,West,Southwest,96,Indiana Pacers,East,Central,116,FALSE,2018
+2018-10-24,Milwaukee Bucks,East,Central,123,Philadelphia 76ers,East,Atlantic,108,FALSE,2018
+2018-10-24,Phoenix Suns,West,Pacific,113,Los Angeles Lakers,West,Pacific,131,FALSE,2018
+2018-10-24,Sacramento Kings,West,Pacific,97,Memphis Grizzlies,West,Southwest,92,FALSE,2018
+2018-10-24,Golden State Warriors,West,Pacific,144,Washington Wizards,East,Southeast,122,FALSE,2018
+2018-10-25,Detroit Pistons,East,Central,110,Cleveland Cavaliers,East,Central,103,FALSE,2018
+2018-10-25,Orlando Magic,East,Southeast,114,Portland Trail Blazers,West,Northwest,128,FALSE,2018
+2018-10-25,Oklahoma City Thunder,West,Northwest,95,Boston Celtics,East,Atlantic,101,FALSE,2018
+2018-10-25,Los Angeles Lakers,West,Pacific,121,Denver Nuggets,West,Northwest,114,FALSE,2018
+2018-10-26,Charlotte Hornets,East,Southeast,135,Chicago Bulls,East,Central,106,FALSE,2018
+2018-10-26,New York Knicks,East,Atlantic,100,Golden State Warriors,West,Pacific,128,FALSE,2018
+2018-10-26,Toronto Raptors,East,Atlantic,116,Dallas Mavericks,West,Southwest,107,FALSE,2018
+2018-10-26,Houston Rockets,West,Southwest,113,LA Clippers,West,Pacific,133,FALSE,2018
+2018-10-26,Minnesota Timberwolves,West,Northwest,95,Milwaukee Bucks,East,Central,125,FALSE,2018
+2018-10-26,New Orleans Pelicans,West,Southwest,117,Brooklyn Nets,East,Atlantic,115,FALSE,2018
+2018-10-26,Sacramento Kings,West,Pacific,116,Washington Wizards,East,Southeast,112,FALSE,2018
+2018-10-27,Detroit Pistons,East,Central,89,Boston Celtics,East,Atlantic,109,FALSE,2018
+2018-10-27,New Orleans Pelicans,West,Southwest,111,Utah Jazz,West,Northwest,132,FALSE,2018
+2018-10-27,Cleveland Cavaliers,East,Central,107,Indiana Pacers,East,Central,119,FALSE,2018
+2018-10-27,Atlanta Hawks,East,Southeast,85,Chicago Bulls,East,Central,97,FALSE,2018
+2018-10-27,Philadelphia 76ers,East,Atlantic,105,Charlotte Hornets,East,Southeast,103,FALSE,2018
+2018-10-27,Miami Heat,East,Southeast,120,Portland Trail Blazers,West,Northwest,111,FALSE,2018
+2018-10-27,Memphis Grizzlies,West,Southwest,117,Phoenix Suns,West,Pacific,96,FALSE,2018
+2018-10-27,Milwaukee Bucks,East,Central,113,Orlando Magic,East,Southeast,91,FALSE,2018
+2018-10-27,San Antonio Spurs,West,Southwest,110,Los Angeles Lakers,West,Pacific,106,FALSE,2018
+2018-10-28,Dallas Mavericks,West,Southwest,104,Utah Jazz,West,Northwest,113,FALSE,2018
+2018-10-28,Brooklyn Nets,East,Atlantic,114,Golden State Warriors,West,Pacific,120,FALSE,2018
+2018-10-28,Oklahoma City Thunder,West,Northwest,117,Phoenix Suns,West,Pacific,110,FALSE,2018
+2018-10-28,LA Clippers,West,Pacific,136,Washington Wizards,East,Southeast,104,FALSE,2018
+2018-10-29,Indiana Pacers,East,Central,93,Portland Trail Blazers,West,Northwest,103,FALSE,2018
+2018-10-29,Philadelphia 76ers,East,Atlantic,113,Atlanta Hawks,East,Southeast,92,FALSE,2018
+2018-10-29,Miami Heat,East,Southeast,113,Sacramento Kings,West,Pacific,123,FALSE,2018
+2018-10-29,New York Knicks,East,Atlantic,115,Brooklyn Nets,East,Atlantic,96,FALSE,2018
+2018-10-29,Chicago Bulls,East,Central,124,Golden State Warriors,West,Pacific,149,FALSE,2018
+2018-10-29,Milwaukee Bucks,East,Central,124,Toronto Raptors,East,Atlantic,109,FALSE,2018
+2018-10-29,Minnesota Timberwolves,West,Northwest,124,Los Angeles Lakers,West,Pacific,120,FALSE,2018
+2018-10-29,San Antonio Spurs,West,Southwest,113,Dallas Mavericks,West,Southwest,108,FALSE,2018
+2018-10-29,Denver Nuggets,West,Northwest,116,New Orleans Pelicans,West,Southwest,111,FALSE,2018
+2018-10-30,Charlotte Hornets,East,Southeast,125,Miami Heat,East,Southeast,113,FALSE,2018
+2018-10-30,Cleveland Cavaliers,East,Central,136,Atlanta Hawks,East,Southeast,114,FALSE,2018
+2018-10-30,Orlando Magic,East,Southeast,99,Sacramento Kings,West,Pacific,107,FALSE,2018
+2018-10-30,Boston Celtics,East,Atlantic,108,Detroit Pistons,East,Central,105,FALSE,2018
+2018-10-30,Toronto Raptors,East,Atlantic,129,Philadelphia 76ers,East,Atlantic,112,FALSE,2018
+2018-10-30,Houston Rockets,West,Southwest,85,Portland Trail Blazers,West,Northwest,104,FALSE,2018
+2018-10-30,Memphis Grizzlies,West,Southwest,107,Washington Wizards,East,Southeast,95,FALSE,2018
+2018-10-30,Oklahoma City Thunder,West,Northwest,128,LA Clippers,West,Pacific,110,FALSE,2018
+2018-10-31,Brooklyn Nets,East,Atlantic,120,Detroit Pistons,East,Central,119,FALSE,2018
+2018-10-31,New York Knicks,East,Atlantic,101,Indiana Pacers,East,Central,107,FALSE,2018
+2018-10-31,Chicago Bulls,East,Central,107,Denver Nuggets,West,Northwest,108,FALSE,2018
+2018-10-31,Minnesota Timberwolves,West,Northwest,128,Utah Jazz,West,Northwest,125,FALSE,2018
+2018-10-31,Golden State Warriors,West,Pacific,131,New Orleans Pelicans,West,Southwest,121,FALSE,2018
+2018-10-31,Los Angeles Lakers,West,Pacific,114,Dallas Mavericks,West,Southwest,113,FALSE,2018
+2018-10-31,Phoenix Suns,West,Pacific,90,San Antonio Spurs,West,Southwest,120,FALSE,2018
+2018-11-01,Charlotte Hornets,East,Southeast,107,Oklahoma City Thunder,West,Northwest,111,FALSE,2018
+2018-11-01,Cleveland Cavaliers,East,Central,91,Denver Nuggets,West,Northwest,110,FALSE,2018
+2018-11-01,Philadelphia 76ers,East,Atlantic,122,LA Clippers,West,Pacific,113,FALSE,2018
+2018-11-01,Atlanta Hawks,East,Southeast,115,Sacramento Kings,West,Pacific,146,FALSE,2018
+2018-11-01,Boston Celtics,East,Atlantic,117,Milwaukee Bucks,East,Central,113,FALSE,2018
+2018-11-01,Portland Trail Blazers,West,Northwest,132,New Orleans Pelicans,West,Southwest,119,FALSE,2018
+2018-11-02,Washington Wizards,East,Southeast,111,Oklahoma City Thunder,West,Northwest,134,FALSE,2018
+2018-11-02,Orlando Magic,East,Southeast,95,LA Clippers,West,Pacific,120,FALSE,2018
+2018-11-02,Brooklyn Nets,East,Atlantic,111,Houston Rockets,West,Southwest,119,FALSE,2018
+2018-11-02,Chicago Bulls,East,Central,105,Indiana Pacers,East,Central,107,FALSE,2018
+2018-11-02,Dallas Mavericks,West,Southwest,106,New York Knicks,East,Atlantic,118,FALSE,2018
+2018-11-02,Utah Jazz,West,Northwest,100,Memphis Grizzlies,West,Southwest,110,FALSE,2018
+2018-11-02,Phoenix Suns,West,Pacific,98,Toronto Raptors,East,Atlantic,107,FALSE,2018
+2018-11-02,Golden State Warriors,West,Pacific,116,Minnesota Timberwolves,West,Northwest,99,FALSE,2018
+2018-11-03,Philadelphia 76ers,East,Atlantic,109,Detroit Pistons,East,Central,99,FALSE,2018
+2018-11-03,Charlotte Hornets,East,Southeast,126,Cleveland Cavaliers,East,Central,94,FALSE,2018
+2018-11-03,Indiana Pacers,East,Central,102,Boston Celtics,East,Atlantic,101,FALSE,2018
+2018-11-03,Atlanta Hawks,East,Southeast,123,Miami Heat,East,Southeast,118,FALSE,2018
+2018-11-03,San Antonio Spurs,West,Southwest,109,New Orleans Pelicans,West,Southwest,95,FALSE,2018
+2018-11-03,Chicago Bulls,East,Central,88,Houston Rockets,West,Southwest,96,FALSE,2018
+2018-11-03,Denver Nuggets,West,Northwest,103,Utah Jazz,West,Northwest,88,FALSE,2018
+2018-11-03,Portland Trail Blazers,West,Northwest,110,Los Angeles Lakers,West,Pacific,114,FALSE,2018
+2018-11-04,Milwaukee Bucks,East,Central,144,Sacramento Kings,West,Pacific,109,FALSE,2018
+2018-11-04,Brooklyn Nets,East,Atlantic,122,Philadelphia 76ers,East,Atlantic,97,FALSE,2018
+2018-11-04,Washington Wizards,East,Southeast,108,New York Knicks,East,Atlantic,95,FALSE,2018
+2018-11-04,San Antonio Spurs,West,Southwest,110,Orlando Magic,East,Southeast,117,FALSE,2018
+2018-11-04,Phoenix Suns,West,Pacific,102,Memphis Grizzlies,West,Southwest,100,FALSE,2018
+2018-11-04,Los Angeles Lakers,West,Pacific,107,Toronto Raptors,East,Atlantic,121,FALSE,2018
+2018-11-04,Portland Trail Blazers,West,Northwest,111,Minnesota Timberwolves,West,Northwest,81,FALSE,2018
+2018-11-05,Indiana Pacers,East,Central,94,Houston Rockets,West,Southwest,98,FALSE,2018
+2018-11-05,New York Knicks,East,Atlantic,115,Chicago Bulls,East,Central,116,FALSE,2018
+2018-11-05,Oklahoma City Thunder,West,Northwest,122,New Orleans Pelicans,West,Southwest,116,FALSE,2018
+2018-11-05,Detroit Pistons,East,Central,115,Miami Heat,East,Southeast,120,FALSE,2018
+2018-11-05,LA Clippers,West,Pacific,120,Minnesota Timberwolves,West,Northwest,109,FALSE,2018
+2018-11-05,Orlando Magic,East,Southeast,102,Cleveland Cavaliers,East,Central,100,FALSE,2018
+2018-11-05,Denver Nuggets,West,Northwest,115,Boston Celtics,East,Atlantic,107,FALSE,2018
+2018-11-05,Utah Jazz,West,Northwest,111,Toronto Raptors,East,Atlantic,124,FALSE,2018
+2018-11-05,Golden State Warriors,West,Pacific,117,Memphis Grizzlies,West,Southwest,101,FALSE,2018
+2018-11-06,Portland Trail Blazers,West,Northwest,118,Milwaukee Bucks,East,Central,103,FALSE,2018
+2018-11-06,Phoenix Suns,West,Pacific,82,Brooklyn Nets,East,Atlantic,104,FALSE,2018
+2018-11-06,Charlotte Hornets,East,Southeast,113,Atlanta Hawks,East,Southeast,102,FALSE,2018
+2018-11-06,Dallas Mavericks,West,Southwest,119,Washington Wizards,East,Southeast,100,FALSE,2018
+2018-11-07,Cleveland Cavaliers,East,Central,86,Oklahoma City Thunder,West,Northwest,95,FALSE,2018
+2018-11-07,Utah Jazz,West,Northwest,117,Dallas Mavericks,West,Southwest,102,FALSE,2018
+2018-11-07,Sacramento Kings,West,Pacific,105,Toronto Raptors,East,Atlantic,114,FALSE,2018
+2018-11-07,Los Angeles Lakers,West,Pacific,114,Minnesota Timberwolves,West,Northwest,110,FALSE,2018
+2018-11-07,Atlanta Hawks,East,Southeast,107,New York Knicks,East,Atlantic,112,FALSE,2018
+2018-11-07,New Orleans Pelicans,West,Southwest,107,Chicago Bulls,East,Central,98,FALSE,2018
+2018-11-07,Memphis Grizzlies,West,Southwest,89,Denver Nuggets,West,Northwest,87,FALSE,2018
+2018-11-07,Orlando Magic,East,Southeast,96,Detroit Pistons,East,Central,103,FALSE,2018
+2018-11-07,Miami Heat,East,Southeast,95,San Antonio Spurs,West,Southwest,88,FALSE,2018
+2018-11-07,Indiana Pacers,East,Central,94,Philadelphia 76ers,East,Atlantic,100,FALSE,2018
+2018-11-08,Oklahoma City Thunder,West,Northwest,98,Houston Rockets,West,Southwest,80,FALSE,2018
+2018-11-08,Phoenix Suns,West,Pacific,109,Boston Celtics,East,Atlantic,116,FALSE,2018
+2018-11-08,Portland Trail Blazers,West,Northwest,116,LA Clippers,West,Pacific,105,FALSE,2018
+2018-11-08,Golden State Warriors,West,Pacific,111,Milwaukee Bucks,East,Central,134,FALSE,2018
+2018-11-09,Utah Jazz,West,Northwest,123,Boston Celtics,East,Atlantic,115,FALSE,2018
+2018-11-09,Miami Heat,East,Southeast,102,Indiana Pacers,East,Central,110,FALSE,2018
+2018-11-09,Denver Nuggets,West,Northwest,110,Brooklyn Nets,East,Atlantic,112,FALSE,2018
+2018-11-09,Atlanta Hawks,East,Southeast,109,Detroit Pistons,East,Central,124,FALSE,2018
+2018-11-09,Orlando Magic,East,Southeast,117,Washington Wizards,East,Southeast,108,FALSE,2018
+2018-11-09,Philadelphia 76ers,East,Atlantic,133,Charlotte Hornets,East,Southeast,132,FALSE,2018
+2018-11-09,Sacramento Kings,West,Pacific,121,Minnesota Timberwolves,West,Northwest,110,FALSE,2018
+2018-11-10,New Orleans Pelicans,West,Southwest,119,Phoenix Suns,West,Pacific,99,FALSE,2018
+2018-11-10,Dallas Mavericks,West,Southwest,111,Oklahoma City Thunder,West,Northwest,96,FALSE,2018
+2018-11-10,Memphis Grizzlies,West,Southwest,112,Philadelphia 76ers,East,Atlantic,106,FALSE,2018
+2018-11-10,Toronto Raptors,East,Atlantic,128,New York Knicks,East,Atlantic,112,FALSE,2018
+2018-11-10,Golden State Warriors,West,Pacific,116,Brooklyn Nets,East,Atlantic,100,FALSE,2018
+2018-11-10,LA Clippers,West,Pacific,128,Milwaukee Bucks,East,Central,126,FALSE,2018
+2018-11-10,Sacramento Kings,West,Pacific,86,Los Angeles Lakers,West,Pacific,101,FALSE,2018
+2018-11-10,Miami Heat,East,Southeast,110,Washington Wizards,East,Southeast,116,FALSE,2018
+2018-11-10,Chicago Bulls,East,Central,99,Cleveland Cavaliers,East,Central,98,FALSE,2018
+2018-11-10,San Antonio Spurs,West,Southwest,96,Houston Rockets,West,Southwest,89,FALSE,2018
+2018-11-11,New York Knicks,East,Atlantic,89,Orlando Magic,East,Southeast,115,FALSE,2018
+2018-11-11,Los Angeles Lakers,West,Pacific,107,Atlanta Hawks,East,Southeast,106,FALSE,2018
+2018-11-11,Detroit Pistons,East,Central,103,Charlotte Hornets,East,Southeast,113,FALSE,2018
+2018-11-11,Houston Rockets,West,Southwest,115,Indiana Pacers,East,Central,103,FALSE,2018
+2018-11-11,Denver Nuggets,West,Northwest,114,Milwaukee Bucks,East,Central,121,FALSE,2018
+2018-11-11,Portland Trail Blazers,West,Northwest,100,Boston Celtics,East,Atlantic,94,FALSE,2018
+2018-11-12,Chicago Bulls,East,Central,98,Dallas Mavericks,West,Southwest,103,FALSE,2018
+2018-11-12,Minnesota Timberwolves,West,Northwest,120,Brooklyn Nets,East,Atlantic,113,FALSE,2018
+2018-11-12,Toronto Raptors,East,Atlantic,110,New Orleans Pelicans,West,Southwest,126,FALSE,2018
+2018-11-12,LA Clippers,West,Pacific,121,Golden State Warriors,West,Pacific,116,FALSE,2018
+2018-11-12,Washington Wizards,East,Southeast,117,Orlando Magic,East,Southeast,109,FALSE,2018
+2018-11-12,Miami Heat,East,Southeast,114,Philadelphia 76ers,East,Atlantic,124,FALSE,2018
+2018-11-12,Memphis Grizzlies,West,Southwest,88,Utah Jazz,West,Northwest,96,FALSE,2018
+2018-11-12,Oklahoma City Thunder,West,Northwest,118,Phoenix Suns,West,Pacific,101,FALSE,2018
+2018-11-12,Sacramento Kings,West,Pacific,104,San Antonio Spurs,West,Southwest,99,FALSE,2018
+2018-11-13,Golden State Warriors,West,Pacific,110,Atlanta Hawks,East,Southeast,103,FALSE,2018
+2018-11-13,Cleveland Cavaliers,East,Central,113,Charlotte Hornets,East,Southeast,89,FALSE,2018
+2018-11-13,Denver Nuggets,West,Northwest,99,Houston Rockets,West,Southwest,109,FALSE,2018
+2018-11-14,Oklahoma City Thunder,West,Northwest,128,New York Knicks,East,Atlantic,103,FALSE,2018
+2018-11-14,Minnesota Timberwolves,West,Northwest,107,New Orleans Pelicans,West,Southwest,100,FALSE,2018
+2018-11-14,Boston Celtics,East,Atlantic,111,Chicago Bulls,East,Central,82,FALSE,2018
+2018-11-14,Orlando Magic,East,Southeast,111,Philadelphia 76ers,East,Atlantic,106,FALSE,2018
+2018-11-14,Washington Wizards,East,Southeast,119,Cleveland Cavaliers,East,Central,95,FALSE,2018
+2018-11-14,Brooklyn Nets,East,Atlantic,107,Miami Heat,East,Southeast,120,FALSE,2018
+2018-11-14,Toronto Raptors,East,Atlantic,104,Detroit Pistons,East,Central,106,FALSE,2018
+2018-11-14,Dallas Mavericks,West,Southwest,118,Utah Jazz,West,Northwest,68,FALSE,2018
+2018-11-14,Milwaukee Bucks,East,Central,113,Memphis Grizzlies,West,Southwest,116,FALSE,2018
+2018-11-14,Phoenix Suns,West,Pacific,116,San Antonio Spurs,West,Southwest,96,FALSE,2018
