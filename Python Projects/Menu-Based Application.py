@@ -45,6 +45,21 @@ def get_menu_selection(menu_list):
 
     return int(choice)
 
+def smart_get_menu_selection(menu_list):
+    possible_choice_values = []
+    for i in range(0, len(menu_list)):
+        possible_choice_values.append(str(i + 1))
+    choice = input("Search for movie by title ... ")
+
+    while choice not in possible_choice_values:
+        print("Sorry, can you be a little more specific")
+        print("\n" * 30)
+
+        print_menu(menu_list)
+        choice = input("Search for movie by title ...")
+
+    return str(choice)
+
 
 def get_all_possible_writers(list_of_movies):
     writers = []
@@ -74,6 +89,16 @@ def get_valid_writer(list_writers):
         writer = input("Sorry that writer name is not valid. Please try again")
 
     return writer
+
+def smart_get_title(list_of_movies):
+    smart_title_search = input("Search ")
+    smart_filter = []
+    for i in range(0, len(list_of_movies)):
+        if smart_title_search in list_of_movies:
+            smart_filter.append(smart_title_search)
+            return smart_filter
+        print('Can you be more specific')
+
 
 
 def filter_all_listings(list_of_movies, writer):
@@ -124,7 +149,7 @@ def main():
 
     all_writers = get_all_possible_writers(main_movie_list)
 
-    menu_items = ['See All Listings', 'Find movie by Writer', 'TBD', 'TBD', 'TBD', 'Exit']
+    menu_items = ['See All Listings', 'Find movie by Writer', 'Quick and Smart Search', 'Favourites', 'Exit']
 
     print_menu(menu_items)
     choice = get_menu_selection(menu_items)
@@ -148,12 +173,10 @@ def main():
             print_movie_details(current_movie)
 
         elif choice == 3:
-            pass
-
+            print_listings_table(main_movie_list)
+            print('\n')
+            choice = smart_get_menu_selection(menu_items)
         elif choice == 4:
-            pass
-
-        elif choice == 5:
             pass
 
         print_menu(menu_items)
