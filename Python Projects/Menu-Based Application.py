@@ -124,7 +124,7 @@ def main():
 
     all_writers = get_all_possible_writers(main_movie_list)
 
-    menu_items = ['See All Listings', 'Find movie by Writer', 'TBD', 'TBD', 'TBD', 'Exit']
+    menu_items = ['See All Listings', 'Find movie by Writer', 'Quick and Smart Search', 'Favourites', 'TBD', 'Exit']
 
     print_menu(menu_items)
     choice = get_menu_selection(menu_items)

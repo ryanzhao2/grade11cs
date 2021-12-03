@@ -176,7 +176,7 @@ print(reverse(s))
 """
 
 #QUESTION #14
-
+"""
 def count_vowels(some_string):
     count = 0
     for char in some_string:
@@ -190,7 +190,7 @@ def count_vowels(some_string):
 s = input("Enter some word or sentence")
 answer = count_vowels(s)
 print(f'There are {answer} vowels')
-
+"""
 
 #QUESTION #15
 """
