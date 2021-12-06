@@ -119,7 +119,7 @@ def print_movie_details(some_movie):
 
     print(s)
 
-#~~~~~~~~~~~~~~~~~FEATURE #1~~~~~~~~~~~~~~~~~~~~~~~~~~
+#~~~~~~~~~~~~~~~~~FEATURE #1 STUFF~~~~~~~~~~~~~~~~~~~~
 
 # smart search by title~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -248,6 +248,11 @@ def check_choice(title_list):
         if user_choice_favourite in title_list:
             favourites_list.append(user_choice_favourite)
             print('Movie has been added to favourites list')
+            print('1 - Add Movie to Favourites List')
+            print('2 - Finish')
+            print('3 - Access List')
+            print('4 - Exit')
+            user_choice = input("What would you like to do? ")
         else:
             user_choice_favourite = input("Enter a movie title to add to your favourites list:")
 
@@ -265,14 +270,7 @@ def check_choice(title_list):
         user_choice = input("What would you like to do? ")
         while not (user_choice == '1' or user_choice == '3' or user_choice == '5'):
             user_choice = input("What would you like to do? Enter 1, 3, 5")
-        if user_choice == '5':
-            ordered_list = []
-            print(favourites_list)
-            user_choice = input('What is your most favourite movie?')
-            for i in range(len(favourites_list)):
-                if user_choice == favourites_list[i]:
-                    ordered_list.append(favourite_list[i])
-                    print(ordered_list)
+
     if user_choice == '4':
         return
 
