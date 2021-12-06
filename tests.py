@@ -1,61 +1,16 @@
-import random
-import calendar
-
-names = ['Bryant Manning',
-'Rex Wong',
-'Jeannie Santiago',
-'Shelia Morales',
-'Mathew Flowers',
-'Alfred Francis',
-'Jacob Lawrence',
-'Alice Mcguire',
-'Brent Schultz',
-'Natasha Bush',
-'Constance Medina',
-'Philip Mack',
-'Jana Hunter',
-'Edna Porter',
-'Ian Lyons',
-'Alberta Hicks',
-'Rudolph Bell',
-'Violet Gardner',
-'Lloyd Wilson',
-'Pat Sullivan',
-'Amy Nichols',
-'Ignacio Williams',
-'Sabrina May',
-'Thelma Fisher',
-'Geraldine Watkins']
-
-cities = ['Belgrade', 'Tijuana', 'Hangzhou', 'Qom', 'Rome']
-
-months = 'JanFebMarAprMayJunJulAugSepOctNovDec'
-
-list_students = []
-
-for name in names:
-
-    student = []
-    student.append(name)
-    student.append(random.choice(cities))
-    student.append(calendar.month_name[random.randint(1, 12)])
-    student.append(random.randint(1, 30))
-    student.append(random.randint(1990, 2005))
-
-
-    list_students.append(student)
-
-
-print(list_students)
-
-
-# example 4
-# print matrix of data as a table
-
-
-for student in list_students:
-
-    print(f'{student[0]:<20} Born in: {student[1]:<10} \
-on {student[2]:>10} {student[3]:>2}, {student[4]}')
-
-
+g = 'Horror'
+list2_title = ['Fast', 'Slow', 'Medium', 'Ok']
+list2_genre = [['Horror', 'Adventure', 'Sci-fi'], ['Adventure', 'Sci-fi'], ['Horror', 'Adventure', 'Sci-fi'], ['Horror', 'Adventure', 'Sci-fi']]
+list2_actors = ['Jackie Chan', 'Ryan Reynolds', 'Actor1', 'Actor2']
+list2_writers = ['Ryan', 'Bob', 'Jack', 'Kevin']
+main_list = []
+for i in range(len(list2_genre)):
+    if g in list2_genre[i]:
+        print('\n', list2_title[i], list2_genre[i], list2_actors[i], list2_writers[i])
+"""
+main_list.append(list2_title)
+main_list.append(list2_genre)
+main_list.append(list2_actors)
+main_list.append(list2_writers)
+print(main_list)
+"""

@@ -184,7 +184,7 @@ def smart_filter_all_genres2(main_list_of_movies, search_title, genre):
     genre_list = []
 
     for item in main_list_of_movies:
-        if search_title in item[1]:
+        if search_title.upper() in item[1].upper():
             for find_genre in item[3]:
                 if genre.upper() in find_genre.upper():
                     genre_list.append(item)
@@ -219,6 +219,7 @@ def smart_get_genre_search(genres_of_movies):
         genre_input = input(bold + "\nEnter a partial genre or full genre: " + reset_bold)
         for genre in genres_of_movies:
             if genre_input.upper() in genre.upper():
+
                 found_genre = True
                 return genre_input
 
@@ -236,9 +237,9 @@ def smart_filter_all_actors2(main_list_of_movies, search_title, genre, actors):
     actors_list = []
 
     for item in main_list_of_movies:
-        if search_title in item[1]:
+        if search_title.upper() in item[1].upper():
             for find_genre in item[3]:
-                if genre in find_genre:
+                if genre.upper() in find_genre.upper():
                     for an_actor in item[6]:
                         if actors.upper() in an_actor.upper():
                             actors_list.append(item)
@@ -252,7 +253,7 @@ def smart_get_actors_search(actors_of_movies):
     while found_genre != True:
         genre_input = input(bold + "\nEnter a partial actors name or full name: " + reset_bold)
         for genre in actors_of_movies:
-            if genre_input in genre:
+            if genre_input.upper() in genre.upper():
                 found_genre = True
                 return genre_input
 
@@ -288,9 +289,9 @@ def smart_filter_all_writers2(main_list_of_movies, search_title, genre, actors, 
     writers_list = []
 
     for item in main_list_of_movies:
-        if search_title in item[1]:
+        if search_title.upper() in item[1].upper():
             for find_genre in item[3]:
-                if genre in find_genre:
+                if genre.upper() in find_genre.upper():
                     for an_actor in item[6]:
                         if actors.upper() in an_actor.upper():
                             for a_writer in item[7]:
@@ -301,13 +302,13 @@ def smart_filter_all_writers2(main_list_of_movies, search_title, genre, actors, 
 
 
 def smart_get_writers_search(writers_of_movies):
-    found_genre = False
-    while found_genre != True:
-        genre_input = input(bold + "\nEnter a partial writers name or full name: " + reset_bold)
-        for genre in writers_of_movies:
-            if genre_input in genre:
-                found_genre = True
-                return genre_input
+    found_writer = False
+    while found_writer != True:
+        writer_input = input(bold + "\nEnter a partial writers name or full name: " + reset_bold)
+        for writer in writers_of_movies:
+            if writer_input.upper() in writer.upper():
+                found_writer = True
+                return writer_input
 
 def smart_get_all_possible_writers(list_of_writers_movies):
     writers = []
@@ -432,6 +433,7 @@ def main():
             smart_print_titles_table(sub_list_titles)
 
             genre = smart_get_genre_search(all_genres)
+            print('#############', genre)
             getting_genre = smart_filter_all_genres2(main_movie_list, title, genre)
             get_title_from_genre(getting_genre, genre)
 
