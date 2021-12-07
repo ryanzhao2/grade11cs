@@ -234,46 +234,65 @@ def display_movies(movies):
     print("\n")
 
 def check_choice(title_list):
+    count = 0
     favourites_list = []
     print('1 - Add Movie to Favourites List')
-    print('2 - Finish')
-    print('3 - Access List')
-    print('4 - Exit')
-    user_choice = input("What would you like to do? ")
-    while not(user_choice == '1' or user_choice == '2' or user_choice == '3' or user_choice == '4'):
-        user_choice = input("What would you like to do? Enter 1, 2, 3, or 4 ")
+    print('2 - Exit')
+    menu_choice = input("What would you like to do? ")
+    while not(menu_choice == '1' or menu_choice == '2'):
+        menu_choice = input("What would you like to do? Enter 1, 2, or 3 ")
+    if menu_choice == '1':
+        while len(favourites_list) < 5:
+            favourite_choice = input("Enter a movie to add to your favourites list(you can add up to 5 max). Type done if you are done adding movies. ")
+            if favourite_choice == 'done' and len(favourites_list) > 0:
+                break
+            if favourite_choice in title_list:
+                favourites_list.append(favourite_choice)
+                print(f'You added {len(favourites_list)} movies, you have {5 - len(favourites_list)} movie selections remaining.\n')
+            else:
+                print('Try again(you need atleast 1 movie)\n')
+        print(f'Your favourite movies are {favourites_list}')
+        print('1 - Access List')
+        print('2 - Exit')
+        menu_choice = input("What would you like to do next? \n")
+        while not (menu_choice == '1' or menu_choice == '2'):
+            menu_choice = input("What would you like to do? Enter 1 or 2: ")
+            print('\n')
+        if menu_choice == '1':
+            ordered_choice_list = ['','','','','','','']
+            for elem in favourites_list:
+                if elem not in ordered_choice_list and count < len(favourites_list):
+                    print(bold + f'{elem}' + reset_bold)
+                    order_choice = input("What place would you put this movie in(1 for first, 5 for last)")
+                    while not (order_choice == '1' or order_choice == '2' or order_choice == '3' or order_choice == '4' or order_choice == '5'):
+                        order_choice = input(f'Enter a number that is less than {len(favourites_list) + 1}')
+                    while not (int(order_choice) < int(len(favourites_list) + 1)):
+                        order_choice = input(f'Enter a number that is less than {len(favourites_list) + 1}')
+                    if order_choice == '1':
+                        ordered_choice_list.insert(0, elem)
+                        count += 1
+                    if order_choice == '2':
+                        ordered_choice_list.insert(1, elem)
+                        count += 1
+                    if order_choice == '3':
+                        ordered_choice_list.insert(2, elem)
+                        count += 1
+                    if order_choice == '4':
+                        ordered_choice_list.insert(3, elem)
+                        count += 1
+                    if order_choice == '5':
+                        ordered_choice_list.insert(4, elem)
+                        count += 1
 
-    if user_choice == '1':
-        user_choice_favourite = input("Enter a movie title to add to your favourites list:")
-        if user_choice_favourite in title_list:
-            favourites_list.append(user_choice_favourite)
-            print('Movie has been added to favourites list')
-        else:
-            user_choice_favourite = input("Enter a movie title to add to your favourites list:")
+            print(bold + f'\nYour favourite movies are in order {ordered_choice_list}' + reset_bold)
+        if menu_choice == '2':
+            print('\n\nGoodbye, Thanks for visiting')
+            return
 
-    if user_choice == '2':
-        print('1 - Add Movie to Favourites List')
-        print('2 - Finish')
-        print('3 - Access List')
-        print('4 - Exit')
-        user_choice = input("What would you like to do? ")
-    if user_choice == '3':
-        print('Your favourites list includes:', favourites_list)
-        print('1 - Add Movie to Favourites List')
-        print('3 - Exit')
-        print('5 - Sort list from most favourite to least favourite')
-        user_choice = input("What would you like to do? ")
-        while not (user_choice == '1' or user_choice == '3' or user_choice == '5'):
-            user_choice = input("What would you like to do? Enter 1, 3, 5")
-        if user_choice == '5':
-            ordered_list = []
-            print(favourites_list)
-            user_choice = input('What is your most favourite movie?')
-            for i in range(len(favourites_list)):
-                if user_choice == favourites_list[i]:
-                    ordered_list.append(favourite_list[i])
-                    print(ordered_list)
-    if user_choice == '4':
+
+
+    if menu_choice == '2':
+        print('\n\nGoodbye, Thanks for visiting')
         return
 
 
