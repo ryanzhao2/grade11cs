@@ -233,9 +233,9 @@ def display_movies(movies):
 
     print("\n")
 
-def check_choice(title_list):
-    check_repeated_number = []
-    count = 0
+def check_first_choice(title_list):
+
+
     favourites_list = []
     print('1 - Add Movie to Favourites List')
     print('2 - Exit')
@@ -257,6 +257,15 @@ def check_choice(title_list):
         print('1 - Access List')
         print('2 - Exit')
         menu_choice = input("What would you like to do next? ")
+    if menu_choice == '2':
+        print('\n\nGoodbye, Thanks for visiting')
+        return
+    return menu_choice, favourites_list
+
+
+def check_second_choice(menu_choice, favourites_list):
+        check_repeated_number = []
+        count = 0
         #END FUNCTION HERE
         while not (menu_choice == '1' or menu_choice == '2'):
             menu_choice = input("What would you like to do? Enter 1 or 2: ")
@@ -310,9 +319,6 @@ def check_choice(title_list):
 
 
 
-    if menu_choice == '2':
-        print('\n\nGoodbye, Thanks for visiting')
-        return
 
 
 #~~~~~~~~~~~~~~~~MAIN STUFF~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -362,7 +368,9 @@ def main():
 
         elif choice == 4:
             display_movies(all_titles)
-            check_choice(all_titles)
+            check_first_choice(all_titles)
+            check_second_choice(check_first_choice, check_first_choice)
+
         print_menu(menu_items)
         choice = get_menu_selection(menu_items)
 
