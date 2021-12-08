@@ -234,46 +234,84 @@ def display_movies(movies):
     print("\n")
 
 def check_choice(title_list):
+    check_repeated_number = []
+    count = 0
     favourites_list = []
     print('1 - Add Movie to Favourites List')
-    print('2 - Finish')
-    print('3 - Access List')
-    print('4 - Exit')
-    user_choice = input("What would you like to do? ")
-    while not(user_choice == '1' or user_choice == '2' or user_choice == '3' or user_choice == '4'):
-        user_choice = input("What would you like to do? Enter 1, 2, 3, or 4 ")
+    print('2 - Exit')
+    menu_choice = input("What would you like to do? ")
+    while not(menu_choice == '1' or menu_choice == '2'):
+        menu_choice = input("What would you like to do? Enter 1, 2, or 3 ")
 
-    if user_choice == '1':
-        user_choice_favourite = input("Enter a movie title to add to your favourites list:")
-        if user_choice_favourite in title_list:
-            favourites_list.append(user_choice_favourite)
-            print('Movie has been added to favourites list')
-        else:
-            user_choice_favourite = input("Enter a movie title to add to your favourites list:")
+    if menu_choice == '1':
+        while len(favourites_list) < 5:
+            favourite_choice = input("Enter a movie to add to your favourites list(you can add up to 5 max). Type done if you are done adding movies. ")
+            if favourite_choice == 'done' and len(favourites_list) > 0:
+                break
+            if favourite_choice in title_list:
+                favourites_list.append(favourite_choice)
+                print(f'You added {len(favourites_list)} movies, you have {5 - len(favourites_list)} movie selections remaining.\n')
+            else:
+                print('Try again, be specific and you need atleast 1 movie\n')
+        print(f'Your favourite movies are {favourites_list}')
+        print('1 - Access List')
+        print('2 - Exit')
+        menu_choice = input("What would you like to do next? ")
+        #END FUNCTION HERE
+        while not (menu_choice == '1' or menu_choice == '2'):
+            menu_choice = input("What would you like to do? Enter 1 or 2: ")
+            print('\n')
+        if menu_choice == '1':
+            ordered_choice_list = ['0', '1', '2', '3', '4']
+            for elem in favourites_list:
+                if elem not in ordered_choice_list and count < len(favourites_list):
 
-    if user_choice == '2':
-        print('1 - Add Movie to Favourites List')
-        print('2 - Finish')
-        print('3 - Access List')
-        print('4 - Exit')
-        user_choice = input("What would you like to do? ")
-    if user_choice == '3':
-        print('Your favourites list includes:', favourites_list)
-        print('1 - Add Movie to Favourites List')
-        print('3 - Exit')
-        print('5 - Sort list from most favourite to least favourite')
-        user_choice = input("What would you like to do? ")
-        while not (user_choice == '1' or user_choice == '3' or user_choice == '5'):
-            user_choice = input("What would you like to do? Enter 1, 3, 5")
-        if user_choice == '5':
-            ordered_list = []
-            print(favourites_list)
-            user_choice = input('What is your most favourite movie?')
-            for i in range(len(favourites_list)):
-                if user_choice == favourites_list[i]:
-                    ordered_list.append(favourite_list[i])
-                    print(ordered_list)
-    if user_choice == '4':
+                    order_choice = input('\nWhat place would you put ' + bold + f'"{elem}"' + reset_bold + ' in(1 for first, 5 for last): ')
+                    while not (order_choice == '1' or order_choice == '2' or order_choice == '3' or order_choice == '4' or order_choice == '5'):
+                        order_choice = input(f'Enter a number that is {len(favourites_list)} or less and hasn\' been repeated: ')
+                    while not (int(order_choice) < int(len(favourites_list) + 1) and order_choice not in check_repeated_number):
+                        order_choice = input(f'Enter a number that is {len(favourites_list)} or less and hasn\' been repeated: ')
+                    if order_choice == '1':
+                        ordered_choice_list[0] = elem
+                        check_repeated_number.append('1')
+                        count += 1
+                    if order_choice == '2':
+                        ordered_choice_list[1] = elem
+                        count += 1
+                        check_repeated_number.append('2')
+                    if order_choice == '3':
+                        ordered_choice_list[2] = elem
+                        count += 1
+                        check_repeated_number.append('3')
+                    if order_choice == '4':
+                        ordered_choice_list[3] = elem
+                        count += 1
+                        check_repeated_number.append('4')
+                    if order_choice == '5':
+                        ordered_choice_list[4] = elem
+                        count += 1
+                        check_repeated_number.append('5')
+            if len(ordered_choice_list) == 1:
+                print(bold + f'\nYour favourite movies are in order \n 1. {ordered_choice_list[0]}' + reset_bold)
+            if len(ordered_choice_list) == 2:
+                print(bold + f'\nYour favourite movies are in order \n 1. {ordered_choice_list[0]} \n 2. {ordered_choice_list[1]}' + reset_bold)
+            if len(ordered_choice_list) == 3:
+                print(bold + f'\nYour favourite movies are in order \n 1. {ordered_choice_list[0]} \n 2. {ordered_choice_list[1]}\
+\n 3. {ordered_choice_list[2]}' + reset_bold)
+            if len(ordered_choice_list) == 4:
+                print(bold + f'\nYour favourite movies are in order \n 1. {ordered_choice_list[0]} \n 2. {ordered_choice_list[1]}\
+\n 3. {ordered_choice_list[2]} \n 4. {ordered_choice_list[3]} + reset_bold')
+            if len(ordered_choice_list) == 5:
+                print(bold + f'\nYour favourite movies are in order \n 1. {ordered_choice_list[0]} \n 2. {ordered_choice_list[1]}\
+\n 3. {ordered_choice_list[2]} \n 4. {ordered_choice_list[3]} \n 5. {ordered_choice_list[4]}' + reset_bold)
+        if menu_choice == '2':
+            print('\n\nGoodbye, Thanks for visiting')
+            return
+
+
+
+    if menu_choice == '2':
+        print('\n\nGoodbye, Thanks for visiting')
         return
 
 
