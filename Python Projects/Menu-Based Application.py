@@ -233,16 +233,16 @@ def display_movies(movies):
 
     print("\n")
 
-def check_first_choice(title_list):
-
-
-    favourites_list = []
+def check_first_choice():
     print('1 - Add Movie to Favourites List')
     print('2 - Exit')
     menu_choice = input("What would you like to do? ")
     while not(menu_choice == '1' or menu_choice == '2'):
-        menu_choice = input("What would you like to do? Enter 1, 2, or 3 ")
+        menu_choice = input("What would you like to do? Enter 1 or 2")
+    return menu_choice
 
+def add_to_favourites(menu_choice, title_list):
+    favourites_list = []
     if menu_choice == '1':
         while len(favourites_list) < 5:
             favourite_choice = input("Enter a movie to add to your favourites list(you can add up to 5 max). Type done if you are done adding movies. ")
@@ -260,8 +260,7 @@ def check_first_choice(title_list):
     if menu_choice == '2':
         print('\n\nGoodbye, Thanks for visiting')
         return
-    return menu_choice, favourites_list
-
+    return favourites_list
 
 def check_second_choice(menu_choice, favourites_list):
         check_repeated_number = []
@@ -369,7 +368,7 @@ def main():
         elif choice == 4:
             display_movies(all_titles)
             check_first_choice(all_titles)
-            check_second_choice(check_first_choice, check_first_choice)
+            check_second_choice(check_first_choice, check_first_choice2)
 
         print_menu(menu_items)
         choice = get_menu_selection(menu_items)
