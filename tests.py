@@ -1,53 +1,73 @@
-'''
-Created April 2018
-Aaron Quesnelle
-
-for ICS3U
-
-'''
 from tkinter import *
+import random
+
+def changeStyle():
+    #style = styleOptionVar.get()
+    style = styleSpinVar.get()
+
+    if style == "normal":
+        wordLabel.config(font=("Century Gothic", "40", "normal"))
+        #wordLabel.config(font=("Helvetica 40"))
+        wordVar.set("normal")
+
+    elif style == "underline":
+        wordLabel.config(font=("Century Gothic", "40", "underline"))
+        #wordLabel.config(font=("Helvetica 40 underline"))
+        wordVar.set("underline")
 
 
-def generateNameBox():
-    n = inputStringVar.get()
+    elif style == "bold":
+        wordLabel.config(font=("Century Gothic", "40", "bold"))
+        #wordLabel.config(font=("Helvetica 40 bold"))
+        wordVar.set("bold")
 
-    s = ""
-    s += "+" + "-" * len(n) + "+\n"
-    s += "|" + n + "|\n"
-    s += "+" + "-" * len(n) + "+\n"
-
-    nameStringVar.set(s)
+    elif style == "italic":
+        wordLabel.config(font=("Century Gothic", "40", "italic"))
+        #wordLabel.config(font=("Helvetica 40 italic"))
+        wordVar.set("italic")
 
 
-# MAIN
-# Generate holding structures for GUI
-#############
+
+
+
+#MAIN
+#HOlding frames
+#########
 root = Tk()
-
 mainframe = Frame(root)
 
-# Create the widgets and associated Vars
-#############
-nameStringVar = StringVar()
-nameLabel = Label(mainframe, text="", font=("Courier", 30), textvariable=nameStringVar)
+#Widgets
+#########
+wordVar = StringVar()
+wordVar.set("normal")
+wordLabel = Label(mainframe, font=("Century Gothic", "40", "normal"), textvariable=wordVar)
+#wordLabel = Label(mainframe, font=("Helvetica 40 underline"), textvariable=wordVar)
 
-instructionLabel = Label(mainframe, text="Enter your name", font=("Courier", 11))
+styles = ['normal', 'underline', 'italic', 'bold']
+styleOptionVar = StringVar()
+styleOptionVar.set('normal')
+styleOption = OptionMenu(mainframe, styleOptionVar, *styles)
 
-greetingButton = Button(mainframe, text="FORMAT", command=generateNameBox)
 
-inputStringVar = StringVar()
-inputEntry = Entry(mainframe, width=15, textvariable=inputStringVar)
+styles = ['normal', 'underline', 'italic', 'bold']
+styleSpinVar = StringVar()
+styleSpinVar.set('normal')
+styleSpinbox = Spinbox(mainframe, textvariable = styleSpinVar, values=styles)
 
-# Grid the widgets
-#############
-root.minsize(width=250, height=400)
-root.maxsize(width=500, height=400)
-mainframe.grid(padx=50, pady=50)
+styleButton = Button(mainframe, text="change", command=changeStyle)
 
-instructionLabel.grid(row=1, column=1, sticky=W)
-inputEntry.grid(row=2, column=1, sticky=W)
-greetingButton.grid(row=3, column=1, ipadx=33, pady=5, sticky=W)
 
-nameLabel.grid(row=5, column=1, sticky=W)
+#GRID THE WIDGETS
+###########
+mainframe.grid(padx = 50, pady = 50)
+
+
+styleOption.grid(row=1, column=1, padx=20, pady=10, sticky=E+W)
+styleSpinbox.grid(row=2, column=1, padx=20, pady=10, sticky=E+W)
+
+styleButton.grid(row=3, column=1, padx=20, pady=10, ipady=10, sticky=E+W)
+
+wordLabel.grid(row=1, column=2, padx = 20, rowspan=2)
+
 
 root.mainloop()
