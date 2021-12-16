@@ -77,7 +77,7 @@ while sum < 100:
     sum += number
     count += 1
     print(f'rolled a {number} >>> total is {sum}')
-print(f'total number of roles is {count}')
+print(f'total number of rolls is {count}')
 """
 
 
@@ -91,8 +91,9 @@ while sum < 100:
     sum += first
     second = random.randint(1, 6)
     sum += second
+    count += 1
     print(f'rolled a {first} and a {second} >>> total is {sum}')
-print(f'total number of roles is {count}')
+print(f'total number of rolls is {count}')
 """
 
 #QUESTION #9

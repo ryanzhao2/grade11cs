@@ -24,7 +24,7 @@ def generate_list_books(filename):
 def print_books(list_of_books):
 
     for book in list_of_books:
-        print(f' {book[0][0:30]:<30} by {book[1][0:20]:<20} {str(book[5])[0:4]} rated {str(book[2])[0:3]}')
+        print(f' {book[0][0:30]:<30} by {book[1][0:20]:<20} {str(book[5]):<4} rated {str(book[2])[0:3]}')
 
 #QUESTION #2
 def print_detailed_book(list_of_books):
@@ -50,8 +50,6 @@ def main():
     print_books(main_book_list)
 
     print_detailed_book(main_book_list)
-
-
 
 main()
 """

@@ -240,11 +240,10 @@ def check_first_choice():
     print('2 - Exit')
     menu_choice = input("What would you like to do? ")
     while not(menu_choice == '1' or menu_choice == '2'):
-        menu_choice = input("What would you like to do? Enter 1 or 2")
+        menu_choice = input("What would you like to do? Enter 1 or 2: ")
     return menu_choice
 
-
-#GET THE FAVOURITES LIST FROM USER INPUTS
+#GET USER INPUT TO ADD MOVIES TO THEIR FAVOURITE'S LIST OR THEY CAN CHOOSE TO EXIT THIS FEATURE
 def add_to_favourites(menu_choice, title_list):
     favourites_list = []
     if menu_choice == '1':
@@ -256,25 +255,28 @@ def add_to_favourites(menu_choice, title_list):
                 favourites_list.append(favourite_choice)
                 print(f'You added {len(favourites_list)} movies, you have {5 - len(favourites_list)} movie selections remaining.\n')
             else:
-                print('Try again, be specific and you need atleast 1 movie\n')
+                print('Movie not found. Try again and be specific. Also you need atleast 1 movie.\n')
         print(f'Your favourite movies are {favourites_list}')
-        print('1 - Access List')
-        print('2 - Exit')
-        menu_choice = input("What would you like to do next? ")
+        return favourites_list
     if menu_choice == '2':
         print('\n\nGoodbye, Thanks for visiting')
-        return
-    return favourites_list
+        return 0
 
-#GET SECOND CHOICE AND SORT THE FAVOURITES LIST
+
+
+#GET USER INPUT AND SORT THE FAVOURITE'S LIST OR THEY CAN CHOOSE TO EXIT THIS FEATURE
 def check_second_choice(menu_choice, favourites_list):
         check_repeated_number = []
         count = 0
+        print('1 - Access List')
+        print('2 - Exit')
+        menu_choice = input("What would you like to do next? ")
         while not (menu_choice == '1' or menu_choice == '2'):
             menu_choice = input("What would you like to do? Enter 1 or 2: ")
             print('\n')
         if menu_choice == '1':
             ordered_choice_list = ['', '', '', '', '']
+            print(favourites_list)
             for elem in favourites_list:
                 if elem not in ordered_choice_list and count < len(favourites_list):
 
@@ -360,7 +362,7 @@ def main():
         # Quick and Smart Search
             movie_list_by_title = smart_search_movie_list_by_title(main_movie_list)
             smart_print_listings_table(movie_list_by_title)
-            #print(movie_list_by_title)
+
             movie_list_by_genre = smart_search_movie_list_by_genre(movie_list_by_title)
             smart_print_listings_table(movie_list_by_genre)
 
@@ -370,12 +372,13 @@ def main():
             movie_list_by_writer = smart_search_movie_list_by_writer(movie_list_by_actor)
             smart_print_listings_table(movie_list_by_writer)
 
-        #Favourites
+        #Favourite's list
         elif choice == 4:
             display_movies(all_titles)
             obtain_user_input = check_first_choice()
             get_favourite_list = add_to_favourites(obtain_user_input, all_titles)
-            check_second_choice(obtain_user_input, get_favourite_list)
+            if get_favourite_list != 0:
+                check_second_choice(obtain_user_input, get_favourite_list)
 
         print_menu(menu_items)
         choice = get_menu_selection(menu_items)

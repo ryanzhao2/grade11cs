@@ -18,6 +18,10 @@ def generateNameBox():
 
     nameStringVar.set(s)
 
+def clearBox():
+    nameStringVar.set("")
+    inputStringVar.set("")
+
 
 # MAIN
 # Generate holding structures for GUI
@@ -35,7 +39,8 @@ instructionLabel = Label(mainframe, text="Enter your name", font=("Courier", 11)
 
 greetingButton = Button(mainframe, text="FORMAT", command=generateNameBox)
 
-clearButton = Button(mainframe, text="Clear", command=generateNameBox)
+clearButton = Button(mainframe, text="Clear", command=clearBox)
+
 
 inputStringVar = StringVar()
 inputEntry = Entry(mainframe, width=15, textvariable=inputStringVar)
@@ -48,11 +53,11 @@ root.minsize(width=250, height=400)
 root.maxsize(width=500, height=400)
 mainframe.grid(padx=50, pady=50)
 
-instructionLabel.grid(row=1, column=1, sticky=W)
-inputEntry.grid(row=2, column=1, sticky=W)
-greetingButton.grid(row=3, column=1, ipadx=33, pady=5, sticky=W)
-clearButton.grid(row=4, column=1, ipadx=33, pady=5, sticky=W)
+instructionLabel.grid(row=9, column=1, sticky=W)
+inputEntry.grid(row=10, column=1, sticky=W)
+greetingButton.grid(row=4, column=1, ipadx=33, pady=5, sticky=W)
+clearButton.grid(row=5, column=1, ipadx=33, pady=5, sticky=W)
 
-nameLabel.grid(row=5, column=1, sticky=W)
+nameLabel.grid(row=6, column=2, sticky=W)
 
 root.mainloop()
