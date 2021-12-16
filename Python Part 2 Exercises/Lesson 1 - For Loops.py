@@ -45,7 +45,7 @@ for i in range(5, 1001, 5):
 """
 def print_times_table(table_number):
      count = 1
-     for i in range(1, 101):
+     for i in range(1, 10):
           print(f'{i} * {table_number} = {count * table_number}')
           count += 1
 
@@ -97,7 +97,8 @@ print(sum_range_values(lowEnd, highEnd))
 """
 def sum_range_values(low, high):
      for i in range((high - low + 1)):
-          print(high - i)
+       
+         print(high - i)
 
 
 
