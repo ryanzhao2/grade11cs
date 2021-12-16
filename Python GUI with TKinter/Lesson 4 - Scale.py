@@ -59,8 +59,24 @@ import random
 
 
 def changeDayNight(self):
-    dayNightScale.config(mainframe, variable=dayNightVar, width=50, length=100, from_=1, to=2, showvalue=False,
-                      orient=HORIZONTAL, command=changeDayNight)
+    dayNight = dayNightVar.get()
+    if dayNight == 2:
+        wordVar.set("OFF")
+        wordLabel.config(bg='Dark Blue')
+        root.config(bg='Dark Blue')
+        mainframe.config(bg='Dark Blue')
+        dayNightScale.config(activebackground='Dark Blue', highlightbackground='Dark Blue', highlightcolor='Dark Blue', troughcolor='Dark Blue', bg='Dark Blue', background='Dark Blue')
+        dayNight = dayNightVar.get()
+    if dayNight == 1:
+        wordVar.set("ON")
+        wordLabel.config(bg='Yellow')
+        root.config(bg='Yellow')
+        mainframe.config(bg='Yellow')
+        dayNightScale.config(activebackground='Grey', highlightbackground='Yellow', highlightcolor='Yellow', troughcolor='Yellow', bg='Yellow', background='Grey')
+        dayNight = dayNightVar.get()
+
+
+
 
 
 
@@ -75,12 +91,19 @@ mainframe = Frame(root)
 
 dayNightVar = IntVar()
 dayNightVar.set(1)
-dayNightScale = Scale(mainframe, variable=dayNightVar, width=50, length=100, from_=1, to=2, showvalue=False,
+dayNightScale = Scale(mainframe, variable=dayNightVar, width=50, length=100, from_=2, to=1, showvalue=False,
                       orient=HORIZONTAL, command=changeDayNight)
 
 wordVar = StringVar()
 wordVar.set("ON")
 wordLabel = Label(mainframe, textvariable=wordVar, font=("Arial", 40))
+
+wordLabel.config(bg='Yellow')
+root.config(bg='Yellow')
+mainframe.config(bg='Yellow')
+dayNightScale.config(activebackground='Grey', highlightbackground='Yellow', highlightcolor='Yellow',
+                     troughcolor='Yellow', bg='Yellow', background='Grey')
+
 
 # GRID THE WIDGETS
 ###########
