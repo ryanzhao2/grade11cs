@@ -70,7 +70,7 @@ For ICS3U
 
 @author: aaronquesnelle
 '''
-
+"""
 from tkinter import *
 import random
 from PIL import Image, ImageTk
@@ -80,13 +80,14 @@ def addImage(event):
     global weather, weatherPictures
 
     # get the mouse click location (x, y)
-
+    x = event.x
+    y = event.y
     # get the Option Menu selection
-
+    menu_option = weatherOptionVar.get()
     # find the index of the selection in the weather list
-
+    index = weather.index(menu_option)
     # use the index to find the correct PhotoImage in the weatherPictures list
-
+    photoToUse = weatherPictures[index]
     # The function create_image below will add an image to the canvas
     cv.create_image(x, y, image=photoToUse)
 
@@ -142,3 +143,4 @@ weatherOption.grid(row=2, column=1, ipady=10, sticky=W)
 cv.grid(row=3, column=1, columnspan=2, pady=10)
 
 root.mainloop()
+"""
