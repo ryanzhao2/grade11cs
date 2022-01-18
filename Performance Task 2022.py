@@ -56,17 +56,20 @@ def changescreen(selection):
 
 root = Tk()
 mainframe = Frame(root)
+topframe= Frame(root)
+middleframe = Frame(root)
+bottomframe = Frame(root)
 
 main_font = Font(family="Constantia", size=20)
 medium_font = Font(family="Constantia", size=15)
 small_font = Font(family="Constantia", size=12)
 
-title = Label(mainframe, text="Blossom Springs", font=("main_font", 30))
+title = Label(topframe, text="Blossom Springs", font=("main_font", 30))
 
 Options = ['Homepage', 'Register Guests', 'View Programs', 'View Guests']
 OptionVar = StringVar()
 OptionVar.set('Homepage')
-Option = OptionMenu(mainframe, OptionVar, *Options, command=changescreen)
+Option = OptionMenu(topframe, OptionVar, *Options, command=changescreen)
 
 first_name_label = Label(mainframe, text="First Name", font=medium_font)
 last_name_label = Label(mainframe, text="Last Name", font=medium_font)
@@ -98,9 +101,11 @@ FemaleRadio = Radiobutton(mainframe, text="Female", variable=GenderVar, value=2,
 
 #GRIDDING
 
-mainframe.grid(padx=300, pady=300)
-title.grid(row=1, column=2, sticky=N, padx=20, pady=20)
-Option.grid(row=1, column=1, sticky=W)
+mainframe.grid(row=2, column=1)
+topframe.grid(row=1, column=1)
+
+title.grid(row=1, column=2, sticky=N, padx=100, pady=100)
+Option.grid(row=1, column=1, sticky=N)
 
 
 
