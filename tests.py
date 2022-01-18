@@ -1,13 +1,21 @@
+'''
+Created May 6, 2018
+For ICS3U
+
+@author: aaronquesnelle
+'''
+
 from tkinter import *
 import random
 
 
-def change_size(value):
-    size = sizeVar.get()
+def drawText(event):
+    x = event.x
+    y = event.y
 
-    wordLabel.config(font=(f'Helvetica {size}'))
+    cv.delete(ALL)
 
-    wordVar.set(f'hello {size} pt')
+    cv.create_text(x, y, font=("Courier, 18"), text=(f'(X: {x}, Y: {y})'))
 
 
 # MAIN
@@ -18,32 +26,18 @@ mainframe = Frame(root)
 
 # Widgets
 #########
-wordVar = StringVar()
-wordVar.set("hello!")
-wordLabel = Label(mainframe, font=("Helvetica 15"), textvariable=wordVar)
 
-sizeVar = IntVar()
-sizeScale = Scale(mainframe, \
-                  from_=8, to=100, \
-                  variable=sizeVar, \
-                  orient=VERTICAL, \
-                  width=50, length=200, \
-                  # showvalue = False, \
-                  troughcolor="#fe3254", \
-                  # label="pt", \
-                  #command=change_size
-                  )
+cv = Canvas(mainframe, width=500, height=500, bg="#eeeeee")
+cv.bind("<Button-1>", drawText)
 
-# depending on the event you want to cause the change
-sizeScale.bind("<ButtonRelease-1>", change_size)
+instructionLabel = Label(mainframe, text="CLICK", font=("Courier", 30))
 
 # GRID THE WIDGETS
 ###########
-mainframe.grid(padx=50, pady=50)
+root.minsize(width=450, height=200)
+mainframe.grid(row=1, column=1, padx=50, pady=50)
 
-wordLabel.grid(row=1, column=2, padx=20, pady=30, sticky=E + W)
-
-sizeScale.grid(row=1, column=1, padx=50, sticky=N)
+instructionLabel.grid(row=1, column=1, sticky=W)
+cv.grid(row=2, column=1, columnspan=2)
 
 root.mainloop()
-
