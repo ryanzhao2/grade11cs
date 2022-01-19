@@ -40,7 +40,7 @@ randomButton.grid(row=2, column=1, columnspan=3, padx=70, pady=70)
 
 root.mainloop()
 """
-
+"""
 from tkinter import *
 import random
 
@@ -51,7 +51,7 @@ def calculateGPA():
     num2 = int(num2Var.get())
     num3 = int(num3Var.get())
     num3 = int(num4Var.get())
-    calcavg =
+    #calcavg =
 
 # MAIN
 # HOlding frames
@@ -90,3 +90,5 @@ num4Entry.grid(row=2, column=4)
 
 gpaButton.grid(row=3, column=1, columnspan=4, ipadx=80, pady=30)
 
+root.mainloop()
+"""
