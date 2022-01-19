@@ -15,6 +15,8 @@ def changescreen(selection):
         register_button.grid_forget()
         first_name_label.grid_forget()
         last_name_label.grid_forget()
+        guests_label.grid_forget()
+        program_label.grid_forget()
 
     elif selection == "Register Guests":
         first_name_entry.grid(row=2, column=2)
@@ -27,10 +29,13 @@ def changescreen(selection):
         last_name_label.grid(row=2, column=3, sticky=W, pady=10)
         guests_listbox.grid_forget()
         programs_listbox.grid_forget()
+        guests_label.grid_forget()
+        program_label.grid_forget()
 
 
     elif selection == "View Programs":
         programs_listbox.grid(row=3, column=1)
+        program_label.grid(row=2, column=2)
         first_name_entry.grid_forget()
         last_name_entry.grid_forget()
         guests_listbox.grid_forget()
@@ -41,9 +46,11 @@ def changescreen(selection):
         register_button.grid_forget()
         first_name_label.grid_forget()
         last_name_label.grid_forget()
+        guests_label.grid_forget()
 
     elif selection == "View Guests":
         guests_listbox.grid(row=3, column=1)
+        guests_label.grid(row=2, column=2)
         first_name_entry.grid_forget()
         last_name_entry.grid_forget()
         programs_listbox.grid_forget()
@@ -53,6 +60,8 @@ def changescreen(selection):
         register_button.grid_forget()
         first_name_label.grid_forget()
         last_name_label.grid_forget()
+        program_label.grid_forget()
+
 
 root = Tk()
 mainframe = Frame(root)
@@ -99,8 +108,14 @@ MaleRadio = Radiobutton(mainframe, text="Male", variable=GenderVar, value=1, fon
 
 FemaleRadio = Radiobutton(mainframe, text="Female", variable=GenderVar, value=2, font=small_font, command="")
 
-#GRIDDING
+program_label = Label(topframe, text="Programs", font=medium_font)
 
+guests_label = Label(topframe, text="Guests", font=medium_font)
+
+#GRIDDING
+root.geometry("1000x800")
+root.minsize(width=500, height=400)
+root.maxsize(width=1500, height=1200)
 mainframe.grid(row=2, column=1)
 topframe.grid(row=1, column=1)
 
