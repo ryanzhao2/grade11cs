@@ -152,6 +152,7 @@ def generate_spotify_list(filename):
         spotify_music_list.append(song)
     return spotify_music_list
 
+
 def format_music():
     global spotify_music_list
     format_list = []
@@ -170,6 +171,8 @@ def format_music():
 
 
 
+
+
 def see_song_details():
     global spotify_music_list
     selection = music_listbox.curselection()[0]
@@ -179,6 +182,7 @@ def see_song_details():
     fourth = spotify_music_list[selection][3]
     format_data = (f'chart # {first}\n{second} by {third}\n#streams {fourth}')
     info_var.set(format_data)
+
 # MAIN
 
 global spotify_music_list
@@ -205,12 +209,13 @@ musicVar.set(music_list)
 music_listbox = Listbox(mainframe, selectmode=SINGLE, listvariable=musicVar, width=80, font=monofurFont)
 
 
-
 info_var = StringVar()
 info_var.set("")
 info_label = Label(mainframe, textvariable=info_var, justify=LEFT, fg="#dd0054", font=monofurFontMedium)
 
 seemore_button = Button(mainframe, text="see more", font=monofurFontLarge, command=see_song_details)
+
+logo_canvas = Canvas(mainframe, width=200, height=200)
 
 # GRID THE WIDGETS
 ###########

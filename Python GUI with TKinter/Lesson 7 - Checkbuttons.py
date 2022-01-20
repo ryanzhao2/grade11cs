@@ -1,4 +1,4 @@
-"""
+
 from tkinter import *
 from tkinter.font import Font
 from tkinter.messagebox import *
@@ -81,7 +81,7 @@ acceptButton.grid(row=4, column=2, ipady=10, padx=10, sticky=EW)
 
 root.mainloop()
 
-"""
+
 '''
 Created May 2018
 Author: aaronquesnelle
@@ -158,7 +158,7 @@ Fabric.grid(row=4, column=1,sticky=W)
 
 root.mainloop()
 """
-
+"""
 from tkinter import *
 
 
@@ -253,4 +253,4 @@ yearLabel.grid(row=5, column=2)
 
 root.mainloop()
 
-
+"""
