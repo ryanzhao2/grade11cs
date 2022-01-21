@@ -68,12 +68,11 @@ def changescreen(self):
     global grid_used
     selection = OptionVar.get()
     if selection == "Homepage":
-        logo_canvas.grid(row=2, column=2, pady=100)
+        logo_canvas.grid(row=2, column=2)
         forget_register()
         forget_guests()
         forget_programs()
         grid_used = False
-
 
     elif selection == "Register Guests":
 
@@ -165,7 +164,7 @@ def get_gender(gname):
 def register():
     number_of_guests = f'Number of Guests: {1+len(large_details_list)}/10'
     registered_label = Label(topframe, text=number_of_guests, font=medium_font, bg="#c2e8dc")
-    registered_label.grid(row=1, column=3)
+    registered_label.grid(row=1, column=3, sticky=W)
 
     if len(large_details_list) < 9:
         gender = get_gender(GenderVar.get())
@@ -377,18 +376,18 @@ programs_listbox = Listbox(mainframe, selectmode=SINGLE, listvariable=ProgramsVa
 GuestsVar = StringVar()
 guests_listbox = Listbox(mainframe, selectmode=SINGLE, listvariable=GuestsVar, width=50, font=main_font, height=10, bg="#c2e8dc")
 
-flowerImage = Image.open("flower.png").resize((250, 150))
+flowerImage = Image.open("flower.png").resize((500, 250))
 flowerPhoto = ImageTk.PhotoImage(flowerImage)
 
 #CREATING LOGO WITH LINES AND CANVAS
-logo_canvas = Canvas(mainframe, width=500, height=300, bg="#f2b6c1", highlightthickness=5, highlightbackground='#cfd7f8')
-logo_canvas.create_line(0, 0, 80, 80, fill='#e1dff8', width=3)
-logo_canvas.create_line(530, 0, 80, 80, fill='#e1dff8', width=3)
-logo_canvas.create_line(0, 300, 80, 80, fill='#e1dff8', width=3)
-logo_canvas.create_line(505, 305, 420, 220, fill='#e1dff8', width=3)
-logo_canvas.create_line(0, 300, 420, 220, fill='#e1dff8', width=3)
-logo_canvas.create_line(500, 0, 420, 220, fill='#e1dff8', width=3)
-logo_canvas.create_image(250, 150, image=flowerPhoto)
+logo_canvas = Canvas(mainframe, width=994, height=594, bg="#f2b6c1", highlightthickness=3, highlightbackground='#cfd7f8')
+logo_canvas.create_line(0, 0, 120, 120, fill='#e1dff8', width=3)
+logo_canvas.create_line(1000, 0, 120, 120, fill='#e1dff8', width=3)
+logo_canvas.create_line(0, 594, 120, 120, fill='#e1dff8', width=3)
+logo_canvas.create_line(1000, 0, 870, 470, fill='#e1dff8', width=3)
+logo_canvas.create_line(0, 594, 870, 470, fill='#e1dff8', width=3)
+logo_canvas.create_line(1000, 594, 870, 470, fill='#e1dff8', width=3)
+logo_canvas.create_image(498, 298, image=flowerPhoto)
 
 #GRIDDING PERMANENT WIDGETS
 #root.geometry("1000x800")
@@ -396,8 +395,8 @@ root.minsize(width=1000, height=750)
 root.maxsize(width=1000, height=750)
 mainframe.grid(row=2, column=1)
 topframe.grid(row=1, column=1)
-logo_canvas.grid(row=2, column=2, pady=100)
-title.grid(row=1, column=2, sticky=N, padx=120, pady=50)
+logo_canvas.grid(row=2, column=2)
+title.grid(row=1, column=2, sticky=N, padx=200, pady=50)
 Option.grid(row=1, column=1, sticky=N)
 registered_label.grid(row=1, column=3)
 
