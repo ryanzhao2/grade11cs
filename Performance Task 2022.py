@@ -24,6 +24,7 @@ price = 0
 
 PriceVar = IntVar()
 price_label = Label(mainframe, text=f'Price: ${PriceVar.get():.2f}', font=main_font, bg="#c2e8dc")
+
 #GLOBAL FOR PREVENTING DUPLICATE PRICE GRIDDING
 grid_used = False
 
@@ -65,7 +66,6 @@ def forget_homepage():
 #FUNCTION FOR GRIDDING AND HIDING WIDGETS WHEN THE OPTION MENU IS SELECTED TO SOMETHING
 def changescreen(self):
     global grid_used
-
     selection = OptionVar.get()
     if selection == "Homepage":
         logo_canvas.grid(row=2, column=2, pady=100)
@@ -76,6 +76,7 @@ def changescreen(self):
 
 
     elif selection == "Register Guests":
+
         first_name_label.grid(row=2, column=2)
         last_name_label.grid(row=2, column=4, padx=20)
         first_name_entry.grid(row=2, column=3)
@@ -148,7 +149,7 @@ def clear_entry():
     PriceVar.set(price)
     price_label = Label(mainframe, text=f'Price: ${PriceVar.get():.2f}', font=main_font, bg="#c2e8dc")
     price_label.grid_forget()
-    #price_label.grid(row=5, column=3, padx=20, sticky=W)
+    price_label.grid(row=5, column=3, padx=20, sticky=W)
     grid_used = True
 
 #FUNCTION FOR DETERMINING IF GENDER IS MALE OR FEMALE
@@ -199,6 +200,7 @@ def register():
         large_details_list.append(mini_list)
         clear_entry()
         price_label.grid_forget()
+
     else:
         register_button.configure(state=DISABLED)
 
@@ -304,8 +306,6 @@ room_label = Label(mainframe, text="Room Number", font=medium_font, bg="#c2e8dc"
 medical_label = Label(mainframe, text="Medical", font=medium_font, bg="#c2e8dc")
 
 registered_label = Label(topframe, text="Number of Guests: 0/10", font=medium_font, bg="#c2e8dc")
-
-PriceVar = IntVar()
 
 programs_label_frame = LabelFrame(mainframe, text="Programs", font=medium_font, width=40, bg="#c2e8dc")
 
