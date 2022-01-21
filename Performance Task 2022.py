@@ -2,13 +2,32 @@ from tkinter import *
 from tkinter.font import Font
 from PIL import Image, ImageTk
 
+#SETTING UP FRAMES
+root = Tk()
+root.config(bg="#c2e8dc")
+mainframe = Frame(root, bg="#c2e8dc")
+topframe = Frame(root, bg="#c2e8dc")
+
+#FONTS
+main_font = Font(family="Constantia", size=20)
+medium_font = Font(family="Constantia", size=15)
+small_font = Font(family="Constantia", size=12)
+
 #global big_list
 big_list = []
 
 #global large_details_list
 large_details_list = []
 
+#GLOBAL VARIABLES FOR DISPLAYING PRICE OF PROGRAMS
+price = 0
+
+PriceVar = IntVar()
+price_label = Label(mainframe, text=f'Price: ${PriceVar.get():.2f}', font=main_font, bg="#c2e8dc")
+
+
 #FUNCTIONS FOR HIDING WIDGETS DETERMINED BY THE OPTION MENU
+
 def forget_register():
     first_name_entry.grid_forget()
     last_name_entry.grid_forget()
@@ -27,6 +46,7 @@ def forget_register():
     room_entry.grid_forget()
     medical_label.grid_forget()
     medical_entry.grid_forget()
+    price_label.grid_forget()
 
 def forget_guests():
     guests_label.grid_forget()
@@ -77,6 +97,7 @@ def changescreen(self):
         GolfingCheck.grid(row=5, column=1, sticky=W)
         KayakingCheck.grid(row=6, column=1, sticky=W)
         MovieCheck.grid(row=7, column=1, sticky=W)
+        price_label.grid(row=5, column=3, padx=20, sticky=W)
         forget_guests()
         forget_programs()
         forget_homepage()
@@ -99,6 +120,7 @@ def changescreen(self):
 
 #FUNCTION FOR CLEARING ALL WIDGETS
 def clear_entry():
+    global price
     first_nameVar.set("")
     last_nameVar.set("")
     PhoneVar.set("")
@@ -114,6 +136,8 @@ def clear_entry():
     GolfingVar.set(0)
     KayakingVar.set(0)
     MovieVar.set(0)
+    price = 0
+    price_label.grid_forget()
 
 #FUNCTION FOR DETERMINING IF GENDER IS MALE OR FEMALE
 def get_gender(gname):
@@ -126,8 +150,8 @@ def get_gender(gname):
 
 #FUNCTION FOR GETTING INFORMATION WHEN REGISTERING GUESTS AND ALSO DISPLAYING SPOTS LEFT IN RESORT
 def register():
-    spots_left = f'Spots Left: {9 - len(large_details_list)}'
-    registered_label = Label(topframe, text=spots_left, font=medium_font, bg="#c2e8dc")
+    number_of_guests = f'Number of Guests: {1+len(large_details_list)}/10'
+    registered_label = Label(topframe, text=number_of_guests, font=medium_font, bg="#c2e8dc")
     registered_label.grid(row=1, column=3)
 
     if len(large_details_list) < 9:
@@ -148,17 +172,17 @@ def register():
         mini_list.append(MedicalVar.get())
         if PaddleVar.get() == 1:
             mini_list.append("Stand Up Paddle Boarding")
-        if ScubaVar.get() == 2:
+        elif ScubaVar.get() == 2:
             mini_list.append("Scuba Diving")
-        if ConcertVar.get() == 3:
+        elif ConcertVar.get() == 3:
             mini_list.append("Concert")
-        if WhaleVar.get() == 4:
+        elif WhaleVar.get() == 4:
             mini_list.append("Whale Watching")
-        if GolfingVar.get() == 5:
+        elif GolfingVar.get() == 5:
             mini_list.append("Golfing")
-        if KayakingVar.get() == 6:
+        elif KayakingVar.get() == 6:
             mini_list.append("Kayaking")
-        if MovieVar.get() == 7:
+        elif MovieVar.get() == 7:
             mini_list.append("Movie Under the Stars")
         large_details_list.append(mini_list)
         clear_entry()
@@ -169,7 +193,6 @@ def register():
 #FUNCTION FOR DISPLAYING EXTRA DETAILS FOR EACH REGISTRATION
 def guest_details():
     selection = guests_listbox.curselection()[0]
-    print(selection)
     first = large_details_list[selection][0]
     second = large_details_list[selection][1]
     third = large_details_list[selection][2]
@@ -181,20 +204,79 @@ def guest_details():
     format_data = (f'Age: {first}\nGender:{second}\nPhone: {third}\nEmail: {fourth}\nRoom: {fifth}\nMedical: {sixth}\nPrograms: {six_to_eight}\n{last}')
     DetailsVar.set(format_data)
 
-#SETTING UP FRAMES
-root = Tk()
-root.config(bg="#c2e8dc")
-mainframe = Frame(root, bg="#c2e8dc")
-topframe = Frame(root, bg="#c2e8dc")
+#DISPLAY PRICE
+def display_price():
+    global price_label
+    PriceVar.set(price)
+    price_label = Label(mainframe, text=f'Price: ${PriceVar.get():.2f}', font=main_font, bg="#c2e8dc")
+    price_label.grid(row=5, column=3, padx=20, sticky=W)
 
+#EACH FUNCTION IS ASSIGNED TO A DIFFERENT PROGRAM AS A COMMAND, IT CLEARS THE PREVIOUS GRID BEFORE IT DISPLAYS A NEW ONE
+def paddle_price():
+    global price
+    price_label.grid_forget()
+    if PaddleVar.get() == 1:
+        price += 35
+    else:
+        price -= 35
+    display_price()
 
-#FONTS
-main_font = Font(family="Constantia", size=20)
-medium_font = Font(family="Constantia", size=15)
-small_font = Font(family="Constantia", size=12)
+def scuba_price():
+    price_label.grid_forget()
+    global price
+    if ScubaVar.get() == 2:
+        price += 65
+    else:
+        price -= 65
+    display_price()
+
+def concert_price():
+    price_label.grid_forget()
+    global price
+    if ConcertVar.get() == 3:
+        price += 79
+    else:
+        price -= 79
+    display_price()
+
+def whale_price():
+    price_label.grid_forget()
+    global price
+    if WhaleVar.get() == 4:
+        price += 29
+    else:
+        price -= 29
+    display_price()
+
+def golfing_price():
+    price_label.grid_forget()
+    global price
+    if GolfingVar.get() == 5:
+        price += 25
+    else:
+        price -= 25
+    display_price()
+
+def kayaking_price():
+    price_label.grid_forget()
+    global price
+    if KayakingVar.get() == 6:
+        price += 28
+    else:
+        price -= 28
+    display_price()
+
+def movie_price():
+    price_label.grid_forget()
+    global price
+    if MovieVar.get() == 7:
+        price += 24
+    else:
+        price -=24
+    display_price()
 
 #SETTING UP ALL WIDGETS INCLUDING THEIR FONT, COLORS, SIZE, ETC
-title = Label(topframe, text="Blossom Springs", font=("main_font", 30), bg="#c2e8dc")
+title = Label(topframe, text="Blossom Springs", font=("Segoe Script", 35), bg="#c2e8dc")
 
 Options = ['Homepage', 'Register Guests', 'View Programs', 'View Guests']
 OptionVar = StringVar()
@@ -209,7 +291,9 @@ email_label = Label(mainframe, text="Email", font=medium_font, bg="#c2e8dc")
 room_label = Label(mainframe, text="Room Number", font=medium_font, bg="#c2e8dc")
 medical_label = Label(mainframe, text="Medical", font=medium_font, bg="#c2e8dc")
 
-registered_label = Label(topframe, text="Spots Left: 10", font=medium_font, bg="#c2e8dc")
+registered_label = Label(topframe, text="Number of Guests: 0/10", font=medium_font, bg="#c2e8dc")
+
+PriceVar = IntVar()
 
 programs_label_frame = LabelFrame(mainframe, text="Programs", font=medium_font, width=40, bg="#c2e8dc")
 
@@ -241,25 +325,25 @@ AgeVar = IntVar()
 age_var_scale = Scale(mainframe, from_=150, to=0, label='Age', variable=AgeVar, orient=VERTICAL, bg="#c2e8dc", activebackground="#c2e8dc", highlightbackground="#c2e8dc")
 
 PaddleVar = IntVar()
-PaddleCheck = Checkbutton(programs_label_frame, text="Stand Up Paddle Boarding", onvalue=1, offvalue = 0, variable = PaddleVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
+PaddleCheck = Checkbutton(programs_label_frame, text="Stand Up Paddle Boarding", onvalue=1, offvalue = 0, command=paddle_price, variable = PaddleVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
 
 ScubaVar = IntVar()
-ScubaCheck = Checkbutton(programs_label_frame, text="Scuba Diving", onvalue=2, offvalue = 0, variable = ScubaVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
+ScubaCheck = Checkbutton(programs_label_frame, text="Scuba Diving", onvalue=2, offvalue = 0, command=scuba_price, variable = ScubaVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
 
 ConcertVar = IntVar()
-ConcertCheck = Checkbutton(programs_label_frame, text="Concert", onvalue=3, offvalue = 0, variable = ConcertVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
+ConcertCheck = Checkbutton(programs_label_frame, text="Concert", onvalue=3, offvalue = 0, command=concert_price, variable = ConcertVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
 
 WhaleVar = IntVar()
-WhaleCheck = Checkbutton(programs_label_frame, text="Whale Watching", onvalue=4, offvalue = 0, variable = WhaleVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
+WhaleCheck = Checkbutton(programs_label_frame, text="Whale Watching", onvalue=4, offvalue = 0, command=whale_price, variable = WhaleVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
 
 GolfingVar = IntVar()
-GolfingCheck = Checkbutton(programs_label_frame, text="Golfing", onvalue=5, offvalue = 0, variable = GolfingVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
+GolfingCheck = Checkbutton(programs_label_frame, text="Golfing", onvalue=5, offvalue = 0, command=golfing_price, variable = GolfingVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
 
 KayakingVar = IntVar()
-KayakingCheck = Checkbutton(programs_label_frame, text="Kayaking", onvalue=6, offvalue = 0, variable = KayakingVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
+KayakingCheck = Checkbutton(programs_label_frame, text="Kayaking", onvalue=6, offvalue = 0, command=kayaking_price, variable = KayakingVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
 
 MovieVar = IntVar()
-MovieCheck = Checkbutton(programs_label_frame, text="Movie Under the Stars", onvalue=7, offvalue = 0, variable = MovieVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
+MovieCheck = Checkbutton(programs_label_frame, text="Movie Under the Stars", onvalue=7, offvalue = 0, command=movie_price, variable = MovieVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
 
 register_button = Button(mainframe, text="Register", command=register, width=20, height=5, state=NORMAL, bg="#c2e8dc", activebackground="#437b99")
 
@@ -301,7 +385,7 @@ root.maxsize(width=1000, height=750)
 mainframe.grid(row=2, column=1)
 topframe.grid(row=1, column=1)
 logo_canvas.grid(row=2, column=2, pady=100)
-title.grid(row=1, column=2, sticky=N, padx=200, pady=50)
+title.grid(row=1, column=2, sticky=N, padx=120, pady=50)
 Option.grid(row=1, column=1, sticky=N)
 registered_label.grid(row=1, column=3)
 

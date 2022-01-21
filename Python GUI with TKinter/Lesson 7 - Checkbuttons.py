@@ -1,4 +1,4 @@
-
+"""
 from tkinter import *
 from tkinter.font import Font
 from tkinter.messagebox import *
@@ -80,13 +80,13 @@ cancelButton.grid(row=4, column=1, ipady=10, padx=10, sticky=EW)
 acceptButton.grid(row=4, column=2, ipady=10, padx=10, sticky=EW)
 
 root.mainloop()
-
-
+"""
+"""
 '''
 Created May 2018
 Author: aaronquesnelle
 '''
-"""
+
 from tkinter import *
 
 
