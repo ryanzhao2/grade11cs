@@ -380,13 +380,17 @@ flowerImage = Image.open("flower.png").resize((500, 250))
 flowerPhoto = ImageTk.PhotoImage(flowerImage)
 
 #CREATING LOGO WITH LINES AND CANVAS
-logo_canvas = Canvas(mainframe, width=994, height=594, bg="#f2b6c1", highlightthickness=3, highlightbackground='#cfd7f8')
+logo_canvas = Canvas(mainframe, width=1130, height=594, bg="#f2b6c1", highlightthickness=3, highlightbackground='#cfd7f8')
 logo_canvas.create_line(0, 0, 120, 120, fill='#e1dff8', width=3)
 logo_canvas.create_line(1000, 0, 120, 120, fill='#e1dff8', width=3)
 logo_canvas.create_line(0, 594, 120, 120, fill='#e1dff8', width=3)
 logo_canvas.create_line(1000, 0, 870, 470, fill='#e1dff8', width=3)
-logo_canvas.create_line(0, 594, 870, 470, fill='#e1dff8', width=3)
-logo_canvas.create_line(1000, 594, 870, 470, fill='#e1dff8', width=3)
+#FOR MAC
+logo_canvas.create_line(0, 595, 870, 470, fill='#e1dff8', width=3)
+logo_canvas.create_line(1030, 620, 870, 470, fill='#e1dff8', width=3)
+#FOR WINDOWS
+#logo_canvas.create_line(0, 570, 870, 470, fill='#e1dff8', width=3)
+#logo_canvas.create_line(1030, 594, 870, 470, fill='#e1dff8', width=3)
 logo_canvas.create_image(498, 298, image=flowerPhoto)
 
 #GRIDDING PERMANENT WIDGETS
