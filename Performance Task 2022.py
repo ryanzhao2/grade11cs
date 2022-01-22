@@ -13,20 +13,26 @@ main_font = Font(family="Constantia", size=20)
 medium_font = Font(family="Constantia", size=15)
 small_font = Font(family="Constantia", size=12)
 
+#global count for guests
+guest_count = 1
+
 #global big_list
 big_list = []
 
 #global large_details_list
 large_details_list = []
 
+#global name_list
+name_list = []
+
 #GLOBAL VARIABLES FOR DISPLAYING PRICE OF PROGRAMS
 price = 0
-
 PriceVar = IntVar()
 price_label = Label(mainframe, text=f'Price: ${PriceVar.get():.2f}', font=main_font, bg="#c2e8dc")
 
 #GLOBAL FOR PREVENTING DUPLICATE PRICE GRIDDING
-grid_used = False
+number_of_guests = f'Number of Guests: {1+len(large_details_list)}/10'
+registered_label = Label(topframe, text=number_of_guests, font=medium_font, bg="#c2e8dc")
 
 #FUNCTIONS FOR HIDING WIDGETS DETERMINED BY THE OPTION MENU
 
@@ -73,11 +79,10 @@ def changescreen(self):
         forget_register()
         forget_guests()
         forget_programs()
-        grid_used = False
 
     elif selection == "Register Guests":
         first_name_label.grid(row=2, column=2)
-        last_name_label.grid(row=2, column=4)
+        last_name_label.grid(row=2, column=4, padx=20)
         first_name_entry.grid(row=2, column=3)
         last_name_entry.grid(row=2, column=5)
         phone_label.grid(row=3, column=2, pady=40)
@@ -100,9 +105,8 @@ def changescreen(self):
         GolfingCheck.grid(row=5, column=1, sticky=W)
         KayakingCheck.grid(row=6, column=1, sticky=W)
         MovieCheck.grid(row=7, column=1, sticky=W)
-        if grid_used == False:
-            price_label.grid(row=5, column=3, padx=20, sticky=W)
-            grid_used = True
+        price_label.grid(row=5, column=3, padx=20, sticky=W)
+
         forget_guests()
         forget_programs()
         forget_homepage()
@@ -113,7 +117,7 @@ def changescreen(self):
         forget_guests()
         forget_register()
         forget_homepage()
-        grid_used = False
+
 
     elif selection == "View Guests":
         guests_listbox.grid(row=3, column=1, sticky=W)
@@ -123,11 +127,11 @@ def changescreen(self):
         forget_programs()
         forget_register()
         forget_homepage()
-        grid_used = False
+
 
 #FUNCTION FOR CLEARING ALL WIDGETS
 def clear_entry():
-    global grid_used
+    global price_label
     global price
     first_nameVar.set("")
     last_nameVar.set("")
@@ -145,11 +149,13 @@ def clear_entry():
     KayakingVar.set(0)
     MovieVar.set(0)
     price = 0
-    PriceVar.set(price)
-    price_label = Label(mainframe, text=f'Price: ${PriceVar.get():.2f}', font=main_font, bg="#c2e8dc")
+    clear_price()
+    display_price()
+
+#FUNCTION FOR CLEARING PRICE LABEL
+def clear_price():
+    global price_label
     price_label.grid_forget()
-    price_label.grid(row=5, column=3, padx=20, sticky=W)
-    grid_used = True
 
 #FUNCTION FOR DETERMINING IF GENDER IS MALE OR FEMALE
 def get_gender(gname):
@@ -160,46 +166,52 @@ def get_gender(gname):
         gender = 'Female'
     return gender
 
+#FUNCTION FOR REGISTERING GUESTS DETAILS IN LIST WITHOUT CURLY BRACKETS
+def register_names():
+    global name_list
+    global guest_count
+    first = first_nameVar.get().upper()
+    last = last_nameVar.get().upper()
+    name_list.append(f'{guest_count}. {first} {last}')
+    GuestsVar.set(name_list)
+    guest_count +=1
+
 #FUNCTION FOR GETTING INFORMATION WHEN REGISTERING GUESTS AND ALSO DISPLAYING SPOTS LEFT IN RESORT
-def register():
+def register_details():
+    global registered_label
+    global number_of_guests
+    registered_label.grid_forget()
     number_of_guests = f'Number of Guests: {1+len(large_details_list)}/10'
     registered_label = Label(topframe, text=number_of_guests, font=medium_font, bg="#c2e8dc")
     registered_label.grid(row=1, column=3, sticky=W)
-
+    gender = get_gender(GenderVar.get())
+    mini_list = []
+    register_names()
+    mini_list.append(AgeVar.get())
+    mini_list.append(gender)
+    mini_list.append(PhoneVar.get())
+    mini_list.append(EmailVar.get())
+    mini_list.append(RoomVar.get())
+    mini_list.append(MedicalVar.get())
+    if PaddleVar.get() == 1:
+        mini_list.append("Stand Up Paddle Boarding")
+    elif ScubaVar.get() == 2:
+        mini_list.append("Scuba Diving")
+    elif ConcertVar.get() == 3:
+        mini_list.append("Concert")
+    elif WhaleVar.get() == 4:
+        mini_list.append("Whale Watching")
+    elif GolfingVar.get() == 5:
+        mini_list.append("Golfing")
+    elif KayakingVar.get() == 6:
+        mini_list.append("Kayaking")
+    elif MovieVar.get() == 7:
+        mini_list.append("Movie Under the Stars")
+    clear_entry()
     if len(large_details_list) < 9:
-        gender = get_gender(GenderVar.get())
-        mini_list = []
-        name_list = []
-        first = first_nameVar.get()
-        last = last_nameVar.get()
-        name_list.append(f'{first:<20}')
-        name_list.append(f'{last:<20}')
-        big_list.append(name_list)
-        GuestsVar.set(big_list)
-        mini_list.append(AgeVar.get())
-        mini_list.append(gender)
-        mini_list.append(PhoneVar.get())
-        mini_list.append(EmailVar.get())
-        mini_list.append(RoomVar.get())
-        mini_list.append(MedicalVar.get())
-        if PaddleVar.get() == 1:
-            mini_list.append("Stand Up Paddle Boarding")
-        elif ScubaVar.get() == 2:
-            mini_list.append("Scuba Diving")
-        elif ConcertVar.get() == 3:
-            mini_list.append("Concert")
-        elif WhaleVar.get() == 4:
-            mini_list.append("Whale Watching")
-        elif GolfingVar.get() == 5:
-            mini_list.append("Golfing")
-        elif KayakingVar.get() == 6:
-            mini_list.append("Kayaking")
-        elif MovieVar.get() == 7:
-            mini_list.append("Movie Under the Stars")
         large_details_list.append(mini_list)
-        clear_entry()
-
     else:
+        large_details_list.append(mini_list)
         register_button.configure(state=DISABLED)
 
 #FUNCTION FOR DISPLAYING EXTRA DETAILS FOR EACH REGISTRATION
@@ -355,14 +367,13 @@ KayakingCheck = Checkbutton(programs_label_frame, text="Kayaking", onvalue=6, of
 MovieVar = IntVar()
 MovieCheck = Checkbutton(programs_label_frame, text="Movie Under the Stars", onvalue=7, offvalue = 0, command=movie_price, variable = MovieVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
 
-register_button = Button(mainframe, text="Register", command=register, width=20, height=5, state=NORMAL, bg="#c2e8dc", activebackground="#437b99")
+register_button = Button(mainframe, text="Register", command=register_details, width=20, height=5, state=NORMAL, bg="#c2e8dc", activebackground="#437b99")
 
 program_label = Label(mainframe, text="Programs", font=medium_font, bg="#c2e8dc")
 
 guests_label = Label(mainframe, text="Guests", font=medium_font, bg="#c2e8dc")
 
 DetailsVar = StringVar()
-DetailsVar.set("")
 details_label = Label(mainframe, textvariable=DetailsVar, justify=LEFT, font=medium_font, bg="#c2e8dc")
 
 #PROGRAM LIST FOR ALL THE PROGRAMS IN THE RESORT
