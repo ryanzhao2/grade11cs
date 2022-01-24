@@ -95,8 +95,8 @@ def changescreen(self):
         medical_entry.grid(row=4, column=5)
         register_button.grid(row=5, column=5)
         age_var_scale.grid(row=4, column=1, pady=20)
-        MaleRadio.grid(row=2, column=1, sticky=W, padx=40)
-        FemaleRadio.grid(row=3, column=1, sticky=W, padx=40)
+        MaleRadio.grid(row=2, column=1, sticky=W, padx=20)
+        FemaleRadio.grid(row=3, column=1, sticky=W, padx=20)
         programs_label_frame.grid(row=5, column=2, sticky=W)
         PaddleCheck.grid(row=1, column=1, sticky=W)
         ScubaCheck.grid(row=2, column=1, sticky=W)
@@ -122,8 +122,8 @@ def changescreen(self):
     elif selection == "View Guests":
         guests_listbox.grid(row=3, column=1, sticky=W, padx=150)
         guests_label.grid(row=2, column=1)
-        Details_button.grid(row=4, column=3, sticky=NE, padx=150, pady=50)
-        details_label.grid(row=4, column=1, sticky=E)
+        Details_button.grid(row=4, column=3, sticky=N, padx=127, pady=50)
+        details_label.grid(row=4, column=2, sticky=E)
         forget_programs()
         forget_register()
         forget_homepage()
@@ -195,17 +195,17 @@ def register_details():
     mini_list.append(MedicalVar.get())
     if PaddleVar.get() == 1:
         mini_list.append("Stand Up Paddle Boarding")
-    elif ScubaVar.get() == 2:
+    if ScubaVar.get() == 2:
         mini_list.append("Scuba Diving")
-    elif ConcertVar.get() == 3:
+    if ConcertVar.get() == 3:
         mini_list.append("Concert")
-    elif WhaleVar.get() == 4:
+    if WhaleVar.get() == 4:
         mini_list.append("Whale Watching")
-    elif GolfingVar.get() == 5:
+    if GolfingVar.get() == 5:
         mini_list.append("Golfing")
-    elif KayakingVar.get() == 6:
+    if KayakingVar.get() == 6:
         mini_list.append("Kayaking")
-    elif MovieVar.get() == 7:
+    if MovieVar.get() == 7:
         mini_list.append("Movie Under the Stars")
     clear_entry()
     if len(large_details_list) < 9:
@@ -223,11 +223,8 @@ def guest_details():
     fourth = large_details_list[selection][3]
     fifth = large_details_list[selection][4]
     sixth = large_details_list[selection][5]
-    print('medical', sixth)
-    six_to_eight = large_details_list[selection][6:]
+    six_to_eight = large_details_list[selection][6:9]
     last = large_details_list[selection][9:]
-    print(six_to_eight)
-    print(last)
     format_data = (f'Age: {first}\nGender: {second}\nPhone: {third}\nEmail: {fourth}\nRoom: {fifth}\nMedical: {sixth}\nPrograms: {six_to_eight}\n{last}')
     DetailsVar.set(format_data)
 
@@ -349,7 +346,7 @@ medical_entry = Entry(mainframe, width=15, font=main_font, textvariable=MedicalV
 Details_button = Button(root, text="See Details", font=medium_font, width=10, height=2, command=guest_details, bg="#c2e8dc", activebackground="#437b99")
 
 AgeVar = IntVar()
-age_var_scale = Scale(mainframe, from_=150, to=0, label='Age', variable=AgeVar, length=200, orient=VERTICAL, bg="#c2e8dc", activebackground="#c2e8dc", highlightbackground="#c2e8dc")
+age_var_scale = Scale(mainframe, from_=150, to=0, label='Age', variable=AgeVar, length=100, orient=VERTICAL, bg="#c2e8dc", activebackground="#c2e8dc", highlightbackground="#c2e8dc")
 
 PaddleVar = IntVar()
 PaddleCheck = Checkbutton(programs_label_frame, text="Stand Up Paddle Boarding", onvalue=1, offvalue = 0, command=paddle_price, variable = PaddleVar, font=small_font, bg="#c2e8dc", activebackground="#c2e8dc")
@@ -378,8 +375,10 @@ program_label = Label(mainframe, text="Programs", font=medium_font, bg="#c2e8dc"
 
 guests_label = Label(mainframe, text="Guests", font=medium_font, bg="#c2e8dc")
 
+
+#DETAILS LABEL USES ANCHOR SO TEXT IS ALWAYS ON THE RIGHT AND WIDTH SO THE LABEL BOX IS ALWAYS THE SAME WIDTH
 DetailsVar = StringVar()
-details_label = Label(root, textvariable=DetailsVar, justify=LEFT, font=medium_font, bg="#c2e8dc")
+details_label = Label(root, textvariable=DetailsVar, justify=LEFT, font=("Constantia", 13), anchor=W, width=50, bg="#c2e8dc")
 
 #PROGRAM LIST FOR ALL THE PROGRAMS IN THE RESORT
 all_programs = ["Monday - Stand Up Paddle Boarding", "Tuesday - Scuba Diving", "Wednesday - Concert", "Thursday - Whale Watching"\
@@ -416,7 +415,7 @@ root.maxsize(width=1000, height=750)
 mainframe.grid(row=2, column=1, columnspan=3)
 topframe.grid(row=1, column=1, columnspan=3)
 logo_canvas.grid(row=2, column=1, columnspan=3)
-title.grid(row=1, column=2, sticky=N, padx=200, pady=40)
+title.grid(row=1, column=2, sticky=N, padx=150, pady=40)
 Option.grid(row=1, column=1, sticky=NW)
 registered_label.grid(row=1, column=3, sticky=W)
 
