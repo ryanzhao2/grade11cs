@@ -59,12 +59,14 @@ def forget_register():
 def forget_guests():
     guests_label.grid_forget()
     guests_listbox.grid_forget()
-    Details_button.grid_forget()
-    details_label.grid_forget()
+    guest_details_button.grid_forget()
+    guest_details_label.grid_forget()
 
 def forget_programs():
     programs_listbox.grid_forget()
     program_label.grid_forget()
+    program_details_button.grid_forget()
+    program_details_label.grid_forget()
 
 def forget_homepage():
     logo_canvas.grid_forget()
@@ -114,6 +116,8 @@ def changescreen(self):
     elif selection == "View Programs":
         programs_listbox.grid(row=3, column=1, sticky=W, padx=150)
         program_label.grid(row=2, column=1)
+        program_details_button.grid(row=4, column=3, sticky=NW, padx=133, pady=50)
+        program_details_label.grid(row=4, column=2, sticky=E)
         forget_guests()
         forget_register()
         forget_homepage()
@@ -122,8 +126,8 @@ def changescreen(self):
     elif selection == "View Guests":
         guests_listbox.grid(row=3, column=1, sticky=W, padx=150)
         guests_label.grid(row=2, column=1)
-        Details_button.grid(row=4, column=3, sticky=N, padx=127, pady=50)
-        details_label.grid(row=4, column=2, sticky=E)
+        guest_details_button.grid(row=4, column=3, sticky=N, padx=127, pady=50)
+        guest_details_label.grid(row=4, column=2, sticky=E)
         forget_programs()
         forget_register()
         forget_homepage()
@@ -226,7 +230,48 @@ def guest_details():
     six_to_eight = large_details_list[selection][6:9]
     last = large_details_list[selection][9:]
     format_data = (f'Age: {first}\nGender: {second}\nPhone: {third}\nEmail: {fourth}\nRoom: {fifth}\nMedical: {sixth}\nPrograms: {six_to_eight}\n{last}')
-    DetailsVar.set(format_data)
+    guest_details_var.set(format_data)
+
+#FUNCTION FOR DISPLAYING EXTRA DETAILS FOR THE PROGRAMS
+def program_details():
+    day1 = 'Monday, January 7th'
+    day2 = 'Tuesday, January 8th'
+    day3 = 'Wednesday, January 9th'
+    day4 = 'Thursday, January 10th'
+    day5 = 'Friday, January 11th'
+    day6 = 'Saturday, January 12th'
+    day7 = 'Sunday, January 13th'
+    morning = '10:00 AM'
+    noon = '12:00 AM'
+    afternoon = '2:00 PM'
+    early_evening = '4:00 PM'
+    evening = '6:00 PM'
+    nighttime = '10:00 PM'
+    beach_location1 = 'far right side of the beach'
+    beach_location2 = 'far left side of the beach'
+    beach_location3 = 'General beach area'
+    golf = 'Golf course beside main building'
+    main = 'Main Building'
+    dock = 'At the dock'
+
+    selection = programs_listbox.curselection()[0]
+    if selection == 0:
+        program_details_var.set(f'Day: {day1}\nTime: {morning}\nLocation: {beach_location1}')
+    elif selection == 1:
+        program_details_var.set(f'Day: {day2}\nTime: {noon}\nLocation: {beach_location2}')
+    elif selection == 2:
+        program_details_var.set(f'Day: {day3}\nTime: {evening}\nLocation: {main}')
+    elif selection == 3:
+        program_details_var.set(f'Day: {day4}\nTime: {early_evening}\nLocation: {dock}')
+    elif selection == 4:
+        program_details_var.set(f'Day: {day5}\nTime: {afternoon}\nLocation: {golf}')
+    elif selection == 5:
+        program_details_var.set(f'Day: {day6}\nTime: {noon}\nLocation: {beach_location1}')
+    elif selection == 6:
+        program_details_var.set(f'Day: {day7}\nTime: {nighttime}\nLocation: {beach_location3}')
+
+
+
 
 #DISPLAY PRICE
 def display_price():
@@ -343,7 +388,9 @@ room_entry = Entry(mainframe, width=15, font=main_font, textvariable=RoomVar, bg
 MedicalVar = StringVar()
 medical_entry = Entry(mainframe, width=15, font=main_font, textvariable=MedicalVar, bg="#c2e8dc")
 
-Details_button = Button(root, text="See Details", font=medium_font, width=10, height=2, command=guest_details, bg="#c2e8dc", activebackground="#437b99")
+guest_details_button = Button(root, text="See Details", font=medium_font, width=10, height=2, command=guest_details, bg="#c2e8dc", activebackground="#437b99")
+
+program_details_button = Button(root, text="See Details", font=medium_font, width=10, height=2, command=program_details, bg="#c2e8dc", activebackground="#437b99")
 
 AgeVar = IntVar()
 age_var_scale = Scale(mainframe, from_=150, to=0, label='Age', variable=AgeVar, length=100, orient=VERTICAL, bg="#c2e8dc", activebackground="#c2e8dc", highlightbackground="#c2e8dc")
@@ -377,12 +424,16 @@ guests_label = Label(mainframe, text="Guests", font=medium_font, bg="#c2e8dc")
 
 
 #DETAILS LABEL USES ANCHOR SO TEXT IS ALWAYS ON THE RIGHT AND WIDTH SO THE LABEL BOX IS ALWAYS THE SAME WIDTH
-DetailsVar = StringVar()
-details_label = Label(root, textvariable=DetailsVar, justify=LEFT, font=("Constantia", 13), anchor=W, width=50, bg="#c2e8dc")
+guest_details_var = StringVar()
+guest_details_label = Label(root, textvariable=guest_details_var, justify=LEFT, font=("Constantia", 13), anchor=W, width=50, bg="#c2e8dc")
+
+program_details_var = StringVar()
+program_details_label = Label(root, textvariable=program_details_var, justify=LEFT, font=medium_font, anchor=W, width=41, bg="#c2e8dc")
+
 
 #PROGRAM LIST FOR ALL THE PROGRAMS IN THE RESORT
-all_programs = ["Monday - Stand Up Paddle Boarding", "Tuesday - Scuba Diving", "Wednesday - Concert", "Thursday - Whale Watching"\
-    ,"Friday - Golfing", "Saturday - Kayaking", "Sunday - Movie Under the Stars"]
+all_programs = ["Stand Up Paddle Boarding", "Scuba Diving", "Concert", "Whale Watching"\
+    ,"Golfing", "Kayaking", "Movie Under the Stars"]
 ProgramsVar = StringVar()
 ProgramsVar.set(all_programs)
 programs_listbox = Listbox(mainframe, selectmode=SINGLE, listvariable=ProgramsVar, width=50, font=main_font, height=10, bg="#c2e8dc")
