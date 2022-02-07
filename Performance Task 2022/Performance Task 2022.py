@@ -13,9 +13,6 @@ main_font = Font(family="Constantia", size=20)
 medium_font = Font(family="Constantia", size=15)
 small_font = Font(family="Constantia", size=12)
 
-#global count for guests
-guest_count = 1
-
 #global big_list
 big_list = []
 
@@ -35,7 +32,6 @@ number_of_guests = f'Number of Guests: {1+len(large_details_list)}/10'
 registered_label = Label(topframe, text=number_of_guests, font=medium_font, bg="#c2e8dc")
 
 #FUNCTIONS FOR HIDING WIDGETS DETERMINED BY THE OPTION MENU
-
 def forget_register():
     first_name_entry.grid_forget()
     last_name_entry.grid_forget()
@@ -61,6 +57,7 @@ def forget_guests():
     guests_listbox.grid_forget()
     guest_details_button.grid_forget()
     guest_details_label.grid_forget()
+    guest_delete_button.grid_forget()
 
 def forget_programs():
     programs_listbox.grid_forget()
@@ -73,7 +70,6 @@ def forget_homepage():
 
 #FUNCTION FOR GRIDDING AND HIDING WIDGETS WHEN THE OPTION MENU IS SELECTED TO SOMETHING
 def changescreen(self):
-    global grid_used
     selection = OptionVar.get()
     if selection == "Homepage":
         logo_canvas.grid_forget()
@@ -108,7 +104,6 @@ def changescreen(self):
         KayakingCheck.grid(row=6, column=1, sticky=W)
         MovieCheck.grid(row=7, column=1, sticky=W)
         price_label.grid(row=5, column=3, padx=20, sticky=W)
-
         forget_guests()
         forget_programs()
         forget_homepage()
@@ -116,26 +111,24 @@ def changescreen(self):
     elif selection == "View Programs":
         programs_listbox.grid(row=3, column=1, sticky=W, padx=150)
         program_label.grid(row=2, column=1)
-        program_details_button.grid(row=4, column=3, sticky=NW, padx=133, pady=50)
+        program_details_button.grid(row=4, column=3, sticky=NW, padx=133, pady=30)
         program_details_label.grid(row=4, column=2, sticky=E)
         forget_guests()
         forget_register()
         forget_homepage()
 
-
     elif selection == "View Guests":
         guests_listbox.grid(row=3, column=1, sticky=W, padx=150)
         guests_label.grid(row=2, column=1)
-        guest_details_button.grid(row=4, column=3, sticky=N, padx=127, pady=50)
+        guest_details_button.grid(row=4, column=3, sticky=N, padx=127, pady=30)
         guest_details_label.grid(row=4, column=2, sticky=E)
+        guest_delete_button.grid(row=4, column=3, sticky=S)
         forget_programs()
         forget_register()
         forget_homepage()
 
-
 #FUNCTION FOR CLEARING ALL WIDGETS
 def clear_entry():
-    global price_label
     global price
     first_nameVar.set("")
     last_nameVar.set("")
@@ -173,12 +166,10 @@ def get_gender(gname):
 #FUNCTION FOR REGISTERING GUESTS DETAILS IN LIST WITHOUT CURLY BRACKETS
 def register_names():
     global name_list
-    global guest_count
     first = first_nameVar.get().upper()
     last = last_nameVar.get().upper()
-    name_list.append(f'{guest_count}. {first} {last}')
+    name_list.append(f'Name: {first} {last}')
     GuestsVar.set(name_list)
-    guest_count +=1
 
 #FUNCTION FOR GETTING INFORMATION WHEN REGISTERING GUESTS AND ALSO DISPLAYING SPOTS LEFT IN RESORT
 def register_details():
@@ -220,6 +211,8 @@ def register_details():
 
 #FUNCTION FOR DISPLAYING EXTRA DETAILS FOR EACH REGISTRATION
 def guest_details():
+    if(guests_listbox.curselection() == ()):
+        return
     selection = guests_listbox.curselection()[0]
     first = large_details_list[selection][0]
     second = large_details_list[selection][1]
@@ -232,8 +225,27 @@ def guest_details():
     format_data = (f'Age: {first}\nGender: {second}\nPhone: {third}\nEmail: {fourth}\nRoom: {fifth}\nMedical: {sixth}\nPrograms: {six_to_eight}\n{last}')
     guest_details_var.set(format_data)
 
+#FUNCTION FOR DELETING GUEST ENTRIES
+def guest_delete():
+    global registered_label
+    global number_of_guests
+    if(guests_listbox.curselection() == ()):
+        return
+    selection = guests_listbox.curselection()[0]
+    guests_listbox.delete(selection)
+    guest_details_var.set('')
+    name_list.pop(selection)
+    large_details_list.pop(selection)
+    registered_label.grid_forget()
+    number_of_guests = f'Number of Guests: {len(large_details_list)}/10'
+    registered_label = Label(topframe, text=number_of_guests, font=medium_font, bg="#c2e8dc")
+    registered_label.grid(row=1, column=3, sticky=W)
+    register_button.configure(state=NORMAL)
+
 #FUNCTION FOR DISPLAYING EXTRA DETAILS FOR THE PROGRAMS
 def program_details():
+    if(programs_listbox.curselection() == ()):
+        return
     day1 = 'Monday, January 7th'
     day2 = 'Tuesday, January 8th'
     day3 = 'Wednesday, January 9th'
@@ -247,8 +259,8 @@ def program_details():
     early_evening = '4:00 PM'
     evening = '6:00 PM'
     nighttime = '10:00 PM'
-    beach_location1 = 'far right side of the beach'
-    beach_location2 = 'far left side of the beach'
+    beach_location1 = 'Far right side of the beach'
+    beach_location2 = 'Far left side of the beach'
     beach_location3 = 'General beach area'
     golf = 'Golf course beside main building'
     main = 'Main Building'
@@ -269,9 +281,6 @@ def program_details():
         program_details_var.set(f'Day: {day6}\nTime: {noon}\nLocation: {beach_location1}')
     elif selection == 6:
         program_details_var.set(f'Day: {day7}\nTime: {nighttime}\nLocation: {beach_location3}')
-
-
-
 
 #DISPLAY PRICE
 def display_price():
@@ -347,7 +356,6 @@ def movie_price():
 #SETTING UP ALL WIDGETS INCLUDING THEIR FONT, COLORS, SIZE, ETC
 title = Label(topframe, text="Blossom Springs", font=("Segoe Script", 35), bg="#c2e8dc")
 
-
 #Option Menu is gridded to root so it displays top left
 Options = ['Homepage', 'Register Guests', 'View Programs', 'View Guests']
 OptionVar = StringVar()
@@ -390,6 +398,8 @@ medical_entry = Entry(mainframe, width=15, font=main_font, textvariable=MedicalV
 
 guest_details_button = Button(root, text="See Details", font=medium_font, width=10, height=2, command=guest_details, bg="#c2e8dc", activebackground="#437b99")
 
+guest_delete_button = Button(root, text="Delete", font=medium_font, width=10, height=1, command=guest_delete, bg="#c2e8dc", activebackground="#437b99")
+
 program_details_button = Button(root, text="See Details", font=medium_font, width=10, height=2, command=program_details, bg="#c2e8dc", activebackground="#437b99")
 
 AgeVar = IntVar()
@@ -422,14 +432,12 @@ program_label = Label(mainframe, text="Programs", font=medium_font, bg="#c2e8dc"
 
 guests_label = Label(mainframe, text="Guests", font=medium_font, bg="#c2e8dc")
 
-
 #DETAILS LABEL USES ANCHOR SO TEXT IS ALWAYS ON THE RIGHT AND WIDTH SO THE LABEL BOX IS ALWAYS THE SAME WIDTH
 guest_details_var = StringVar()
-guest_details_label = Label(root, textvariable=guest_details_var, justify=LEFT, font=("Constantia", 13), anchor=W, width=50, bg="#c2e8dc")
+guest_details_label = Label(root, textvariable=guest_details_var, justify=LEFT, font=("Constantia", 13), anchor=W, width=50, height=8, bg="#c2e8dc")
 
 program_details_var = StringVar()
 program_details_label = Label(root, textvariable=program_details_var, justify=LEFT, font=medium_font, anchor=W, width=41, bg="#c2e8dc")
-
 
 #PROGRAM LIST FOR ALL THE PROGRAMS IN THE RESORT
 all_programs = ["Stand Up Paddle Boarding", "Scuba Diving", "Concert", "Whale Watching"\
@@ -456,7 +464,6 @@ logo_canvas.create_line(1000, 0, 870, 470, fill='#e1dff8', width=3)
 #FOR WINDOWS
 logo_canvas.create_line(0, 570, 870, 470, fill='#e1dff8', width=3)
 logo_canvas.create_line(1030, 594, 870, 470, fill='#e1dff8', width=3)
-
 logo_canvas.create_image(498, 298, image=flowerPhoto)
 
 #GRIDDING PERMANENT WIDGETS
